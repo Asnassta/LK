@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<title>Центр управления городским имуществом</title>
+</head>
+<body>
+
+	<!--Sprite-->
+	<svg style="display: none;">
+		<symbol id="close-icon_thin" viewBox="0 0 329.269 329">
+			 <g>
+    			<g>
+     				 <path d="M194.8 164.77L323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0015.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0015.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0"/>
+    			</g>
+ 			 </g>
+		</symbol>
+		<symbol id="close-icon" viewBox="0 0 180.11 179.87">
+			 <g>
+    			<g>
+     				 <path d="M174.29,146,118.14,89.94l56.15-56.07a19.84,19.84,0,1,0-28-28.06L90.05,61.92,33.86,5.81a19.83,19.83,0,1,0-28,28.06L62,89.94,5.82,146a19.84,19.84,0,0,0,28,28.07L90.05,118l56.19,56.11a19.84,19.84,0,1,0,28-28.07Z"/>
+    			</g>
+ 			 </g>
+		</symbol>
+		<symbol id="star-icon" viewBox="0 0 24 23">
+			<g>
+				<path d="M5.3716 22.9996C5.18006 22.9993 4.99105 22.9559 4.81857 22.8726C4.64609 22.7894 4.49455 22.6683 4.3752 22.5185C4.25585 22.3687 4.17173 22.194 4.12909 22.0073C4.08644 21.8205 4.08637 21.6266 4.12886 21.4398L5.67266 14.6386L0.436335 10.0462C0.248409 9.88175 0.112836 9.66581 0.0464026 9.4251C-0.0200312 9.18439 -0.0144086 8.92948 0.0625744 8.69193C0.139557 8.45439 0.28452 8.24463 0.479514 8.08864C0.674508 7.93266 0.91097 7.83728 1.15962 7.81433L8.08769 7.18591L10.8268 0.774956C10.9246 0.54449 11.0881 0.347916 11.2969 0.209732C11.5057 0.0715473 11.7506 -0.00213623 12.001 -0.00213623C12.2513 -0.00213623 12.4962 0.0715473 12.705 0.209732C12.9138 0.347916 13.0773 0.54449 13.1751 0.774956L15.9119 7.18591L22.839 7.8148C23.0878 7.83743 23.3245 7.93257 23.5198 8.08843C23.715 8.2443 23.8602 8.45403 23.9374 8.69164C24.0146 8.92924 24.0204 9.18428 23.9541 9.42514C23.8877 9.66601 23.7522 9.88211 23.5642 10.0467L18.3278 14.6377L19.8721 21.4384C19.9277 21.682 19.9105 21.9366 19.8227 22.1705C19.7349 22.4044 19.5803 22.6073 19.3781 22.7541C19.176 22.9009 18.9351 22.985 18.6855 22.9961C18.4359 23.0072 18.1886 22.9447 17.9742 22.8164L12 19.247L6.02585 22.8188C5.82801 22.9369 5.60198 22.9993 5.3716 22.9996ZM12 17.7088C12.2303 17.7089 12.4562 17.7714 12.6538 17.8896L18.2921 21.2618L16.8348 14.8415C16.7839 14.6171 16.7946 14.383 16.8657 14.1642C16.9369 13.9453 17.0659 13.7498 17.2392 13.5983L22.1833 9.26231L15.6399 8.66912C15.4097 8.64851 15.1895 8.56568 15.0028 8.42951C14.816 8.29333 14.6699 8.10893 14.5799 7.89605L11.9967 1.84721L9.41356 7.89699C9.32426 8.1088 9.17907 8.29236 8.99351 8.42803C8.80796 8.56371 8.58901 8.64639 8.36009 8.66725L1.81575 9.26138L6.75947 13.5973C6.93316 13.7487 7.06252 13.9444 7.13374 14.1635C7.20495 14.3826 7.21536 14.6169 7.16385 14.8415L5.70788 21.2604L11.3439 17.8896C11.5422 17.771 11.769 17.7085 12 17.7088ZM15.9631 7.30615V7.3085C15.9631 7.3085 15.964 7.30709 15.9631 7.30615Z"/>
+			</g>
+		</symbol>
+		<symbol id="search-icon" viewBox="0 0 24 24">
+			<g>
+				<path d="M23.8533 22.4395L16.8816 15.4688C18.2528 13.7823 19.0009 11.6747 18.9998 9.50109C18.9998 4.26188 14.7384 0 9.50016 0C4.26188 0 0 4.26188 0 9.50016C0 14.7384 4.26188 18.9998 9.50016 18.9998C11.6741 19.0011 13.782 18.253 15.4688 16.8816L22.4395 23.8533C22.4859 23.8998 22.541 23.9367 22.6016 23.9618C22.6623 23.987 22.7273 23.9999 22.793 23.9999C22.8586 23.9999 22.9236 23.987 22.9843 23.9618C23.0449 23.9367 23.1 23.8998 23.1464 23.8533L23.8538 23.1464C23.9002 23.1 23.9369 23.0448 23.962 22.9842C23.9871 22.9235 24 22.8585 24 22.7929C23.9999 22.7272 23.987 22.6622 23.9618 22.6016C23.9366 22.541 23.8997 22.4859 23.8533 22.4395ZM9.50016 17.002C5.36437 17.002 2.00016 13.6378 2.00016 9.50203C2.00016 5.36625 5.36437 2.00203 9.50016 2.00203C13.6359 2.00203 17.0002 5.36625 17.0002 9.50203C17.0002 13.6378 13.6359 17.0002 9.50016 17.0002V17.002Z"/>
+			</g>
+		</symbol>
+	</svg>
+
+	<div class="wrapper">
+		<header class="header">
+			<nav class="header__nav">
+				<div class="container">
+					<div class="header__inner">
+						<div class="header__links">
+							<div class="header__link header__drop">
+								<span>О предприятии</span>
+								<div class="header__dropdown">
+									<a href="#" class="header__link">О нас</a>
+									<a href="#" class="header__link">Документы</a>
+									<a href="#" class="header__link">Контакты</a>
+									<a href="#" class="header__link">Реквизиты</a>
+								</div>
+							</div>
+							<div class="header__link header__drop">
+								<span>Деятельность</span>
+								<div class="header__dropdown">
+									<a href="#" class="header__link">Информация для юридических лиц и ИП</a>
+									<a href="#" class="header__link">Информация для граждан</a>
+								</div>
+							</div>
+							<div class="header__link header__drop">
+								<span>Услуги</span>
+								<div class="header__dropdown">
+									<a href="#" class="header__link">Перечень услуг</a>
+									<a href="#" class="header__link">Информация о готовности документов</a>
+									<a href="#" class="header__link">Архивные копии документов</a>
+									<a href="#" class="header__link">Консультации</a>
+									<a href="#" class="header__link">Аренда машино-мест</a>
+									<a href="#" class="header__link">Интерактивные карты паркингов</a>
+								</div>
+							</div>
+							<a href="#" class="header__link">Мероприятия</a>
+							<a href="#" class="header__link">Вопрос-ответ</a>
+						</div>
+						<div class="header__buttons">
+							<div class="header__buttons__inner">
+								<a href="#" class="header__btn-search">
+									<svg>
+										<use xlink:href="#search-icon"></use>
+									</svg>
+								</a>
+								<a href="#" class="header-favorite">
+									<svg>
+										<use xlink:href="#star-icon"></use>
+									</svg>
+									<span>80</span>
+								</a>
+								<div class="burger">
+									<span class="burger__item"></span>
+								</div>
+							</div>
+							<a href="#" class="header__btn">Личный кабинет</a>
+						</div>
+						<div class="header-search">
+							<form action="#" class="header-search__inner">
+								<div class="header-search__input">
+									<span class="header-search__icon">
+										<svg>
+											<use xlink:href="#search-icon"></use>
+										</svg>
+									</span>
+									<input type="text" placeholder="Поиск">
+									<button type="submit">
+										<span>Найти</span>
+										<svg>
+											<use xlink:href="#search-icon"></use>
+										</svg>
+									</button>
+								</div>
+								<div class="header-search__close">
+									<svg>
+										<use xlink:href="#close-icon"></use>
+									</svg>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</nav><!--/header__nav-->
+			<div class="header__menu">
+				<div class="container">
+					<div class="header__inner">
+						<a href="/" class="header-logo">
+							<img src="assets/images/logo.svg" alt="">
+							<div class="header-logo__info">
+								<span>Государственное унитарное предприятие</span>
+								<span>«Центр управления городским имуществом»</span>
+							</div>
+						</a>
+						<div class="header__links header__links_big">
+							<div class="header__link header__drop">
+								<span>Каталог недвижимости</span>
+								<div class="header__dropdown">
+									<a href="#" class="header__link">Жилая недвижимость</a>
+									<a href="#" class="header__link">Коммерческая недвижимость</a>
+									<a href="#" class="header__link">Машино-места</a>
+								</div>
+							</div>
+							<a href="#" class="header__link">Календарь торгов</a>
+							<a href="#" class="header__link">Новости</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header__menu-mobile">
+				<a href="#" class="header__menu-mobile__close">
+					<svg>
+						<use xlink:href="#close-icon_thin"></use>
+					</svg>
+				</a>
+				<div class="header__menu-mobile__inner">
+					<div class="header__link header__drop">
+						<span>О предприятии</span>
+						<div class="header__dropdown">
+							<a href="#" class="header__link">О нас</a>
+							<a href="#" class="header__link">Документы</a>
+							<a href="#" class="header__link">Контакты</a>
+							<a href="#" class="header__link">Реквизиты</a>
+						</div>
+					</div>
+					<div class="header__link header__drop">
+						<span>Деятельность</span>
+						<div class="header__dropdown">
+							<a href="#" class="header__link">Информация для юридических лиц и ИП</a>
+							<a href="#" class="header__link">Информация для граждан</a>
+						</div>
+					</div>
+					<div class="header__link header__drop">
+						<span>Услуги</span>
+						<div class="header__dropdown">
+							<a href="#" class="header__link">Перечень услуг</a>
+							<a href="#" class="header__link">Информация о готовности документов</a>
+							<a href="#" class="header__link">Архивные копии документов</a>
+							<a href="#" class="header__link">Консультации</a>
+							<a href="#" class="header__link">Аренда машино-мест</a>
+							<a href="#" class="header__link">Интерактивные карты паркингов</a>
+						</div>
+					</div>
+					<a href="#" class="header__link">Мероприятия</a>
+					<a href="#" class="header__link">Вопрос-ответ</a>
+					<div class="header__link header__drop">
+						<span>Каталог недвижимости</span>
+						<div class="header__dropdown">
+							<a href="#" class="header__link">Жилая недвижимость</a>
+							<a href="#" class="header__link">Коммерческая недвижимость</a>
+							<a href="#" class="header__link">Машино-места</a>
+						</div>
+					</div>
+					<a href="#" class="header__link">Календарь торгов</a>
+					<a href="#" class="header__link">Новости</a>
+					<div class="header-contact">
+						<a href="tel:84951379758" class="header-contact__phone">8 (495) 137-97-58</a>
+						<div class="header-contact__link">
+							<a href="mailto:info@cugimos.ru">info@cugimos.ru</a>
+						</div>
+						<div class="header-contact__info">г. Москва, Стремянный переулок дом 38</div>
+					</div>
+					<div class="header-social">
+						<a href="#" class="header-social__icon" target="blank">
+							<img src="assets/images/vk-icon.svg" alt="">
+						</a>
+						<a href="#" class="header-social__icon" target="blank">
+							<img src="assets/images/tg-icon.svg" alt="">
+						</a>
+					</div>
+				</div>
+			</div><!--/header__menu-mobile-->
+		</header><!--/header--->
+		<main class="main">
+			<section class="form form-block">
+				<div class="container">
+					<h1 class="form__title">Регистрация</h1>
+					<div class="form-headbox">
+						<a href="registration-physical.html" class="form-headbox__link active">Физическое лицо</a>
+						<a href="registration-juridical.html" class="form-headbox__link">Юридическое лицо</a>
+					</div>
+					<form action="#" class="form__box">
+						<div class="form__inner">
+							<div class="form__items">
+								<div class="form__item">
+									<div class="form-input">
+										<label for="login-lastname" class="form__label">Фамилия*</label>
+										<input id="login-lastname" type="text">
+									</div>
+								</div>
+								<div class="form__item">
+									<div class="form-input">
+										<label for="login-name" class="form__label">Имя*</label>
+										<input id="login-name" type="text">
+									</div>
+								</div>
+								<div class="form__item">
+									<div class="form-input">
+										<label for="login-patronymic" class="form__label">Отчество*</label>
+										<input id="login-patronymic" type="text">
+									</div>
+								</div>
+								<div class="form__item">
+									<div class="form-input">
+										<label for="login-phone" class="form__label">Контактный номер телефона*</label>
+										<input id="login-phone" type="text">
+									</div>
+								</div>
+								<div class="form__item">
+									<div class="form-input">
+										<label for="login-email" class="form__label">E-mail*</label>
+										<input id="login-email" type="email">
+									</div>
+								</div>
+								<div class="form__item">
+									<div class="form-input">
+										<label for="login-password" class="form__label">Пароль*</label>
+										<input id="login-password" type="password">
+									</div>
+								</div>
+								<div class="form__item">
+									<div class="form-input">
+										<label for="login-password-check" class="form__label">Пароль еще раз*</label>
+										<input id="login-password-check" type="password">
+									</div>
+								</div>
+							</div>
+							<div class="form-checkbox">
+								<input type="checkbox" id="form-remember">
+								<label for="form-remember">
+									<span></span>
+									<i>Я подтверждаю, что ознакомлен с <a href="#" class="form__link" target="blank">Политикой обработки персональных данных</a></i>
+								</label>
+							</div>
+							<div class="form__buttons form__buttons_center">
+								<a href="#" class="btn-color-two">
+									<span>Зарегистрироваться</span>
+									<span class="btn-color-two__icon">
+										<img src="assets/images/person-plus.svg" alt="">
+									</span>
+								</a>
+								<a href="#" class="form__link">Авторизация</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</section><!--/form-->
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<a href="/" class="footer-title">
+					<img src="assets/images/logo.svg" alt="">
+					<span class="footer-title__info">
+						<span>Государственное унитарное предприятие</span>
+						<span>«Центр управления городским имуществом»</span>
+					</span>
+				</a>
+				<div class="footer-menu">
+					<div class="footer-menu__col">
+						<div class="footer-menu__block">
+							<div class="footer-menu__title">О предприятии</div>
+							<ul class="footer-menu__list">
+								<li>
+									<a href="#">О нас</a>
+								</li>
+								<li>
+									<a href="#">Документы</a>
+								</li>
+								<li>
+									<a href="#">Контакты</a>
+								</li>
+								<li>
+									<a href="#">Реквизиты</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer-menu__block">
+							<div class="footer-menu__title">Каталог недвижимости</div>
+							<ul class="footer-menu__list">
+								<li>
+									<a href="#">Жилая недвижимость</a>
+								</li>
+								<li>
+									<a href="#">Коммерческая недвижимость</a>
+								</li>
+								<li>
+									<a href="#">Машино-места</a>
+								</li>
+							</ul>
+						</div>
+					</div><!--/footer-menu__col-->
+					<div class="footer-menu__col">
+						<div class="footer-menu__block">
+							<div class="footer-menu__title">Деятельность</div>
+							<ul class="footer-menu__list">
+								<li>
+									<a href="#">Информация для юридических лиц и ИП</a>
+								</li>
+								<li>
+									<a href="#">Информация для граждан</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer-menu__block">
+							<div class="footer-menu__title">Услуги</div>
+							<ul class="footer-menu__list">
+								<li>
+									<a href="#">Перечень услуг</a>
+								</li>
+								<li>
+									<a href="#">Информация о готовности документов</a>
+								</li>
+								<li>
+									<a href="#">Архивные копии документов</a>
+								</li>
+								<li>
+									<a href="#">Консультации</a>
+								</li>
+								<li>
+									<a href="#">Аренда машино-мест</a>
+								</li>
+								<li>
+									<a href="#">Интерактивные карты паркингов</a>
+								</li>
+							</ul>
+						</div>
+					</div><!--/footer-menu__col-->
+					<div class="footer-menu__col">
+						<div class="footer-menu__block">
+							<div class="footer-menu__title">
+								<a href="#">КАЛЕНДАРЬ ТОРГОВ</a>
+							</div>
+							<div class="footer-menu__title">
+								<a href="#">МЕРОПРИЯТИЯ</a>
+							</div>
+							<div class="footer-menu__title">
+								<a href="#">НОВОСТИ</a>
+							</div>
+							<div class="footer-menu__title">
+								<a href="#">ВОПРОС-ОТВЕТ</a>
+							</div>
+						</div>
+					</div><!--/footer-menu__col-->
+					<div class="footer-menu__col">
+						<div class="footer-menu__contact">
+							<div class="footer-menu__block">
+								<div class="footer-menu__phone footer-menu__phone_red">
+									<a href="tel:+74951379758">+7 (495) 137-97-58</a>
+								</div>
+								<div class="footer-menu__phone">
+									<a href="tel:+74957859413">+7 (495) 785-94-13</a>
+								</div>
+								<div class="footer-menu__phone">
+									<a href="tel:+74957853652">+7 (495) 785-36-52</a>
+								</div>
+							</div>
+							<div class="footer-menu__block">
+								<div class="footer-menu__link">
+									<a href="mailto:info@cugimos.ru">info@cugimos.ru</a>
+								</div>
+								<div class="footer-menu__info">г. Москва, Стремянный переулок дом 38</div>
+							</div>
+						</div>
+						<div class="footer-social">
+							<a href="#" class="footer-social__icon" target="blank">
+								<img src="assets/images/vk-icon.svg" alt="">
+							</a>
+							<a href="#" class="footer-social__icon" target="blank">
+								<img src="assets/images/tg-icon.svg" alt="">
+							</a>
+						</div>
+					</div><!--/footer-menu__col-->
+				</div><!--/footer-menu-->
+				<div class="footer__copyright">
+					<div>ГУП г. Москвы «ЦЕНТР УПРАВЛЕНИЯ ГОРОДСКИМ ИМУЩЕСТВОМ» © 2022</div>
+					<div>При полном или частичном использовании материалов с официальных сайтов Правительства Москвы ссылка на источник обязательна.</div>
+				</div>
+			</div>
+		</footer><!--/footer-->
+	</div>
+
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
+	<script src="assets/js/script.js"></script>
+</body>
+</html>
