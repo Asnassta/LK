@@ -838,6 +838,9 @@
       color: #5881A3;
       background-color: #fff; }
 
+.form * {
+  -webkit-appearance: none; }
+
 .form__box {
   background-color: #fff;
   max-width: 840px;

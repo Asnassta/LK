@@ -50,6 +50,9 @@
 			}
 		}
 	}
+	* {
+		-webkit-appearance:none;
+	}
 	&__box {
 		background-color: $wh;
 		max-width: 840px;
