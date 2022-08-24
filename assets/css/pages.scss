@@ -164,4 +164,13 @@
 		}
 	}
 }
+@media(max-width: 375px) {
+	.page {
+		&-content {
+			&__box {
+				padding: 20px 10px;
+			}
+		}
+	}
+}
 /*============/adaptive===========*/

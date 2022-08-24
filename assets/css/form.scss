@@ -85,6 +85,7 @@
 			font-weight: 500;
 			color: $bl;
 			line-height: $lh;
+			box-shadow: none;
 			&::placeholder {
 				color: $gray;
 				opacity: 1;

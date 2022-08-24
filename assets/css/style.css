@@ -869,7 +869,9 @@
   font-size: 16px;
   font-weight: 500;
   color: #000;
-  line-height: 1.25; }
+  line-height: 1.25;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
   .form-input input::-webkit-input-placeholder {
     color: #999999;
     opacity: 1; }
@@ -1321,6 +1323,10 @@
     font-size: 16px; }
   .page-header__data {
     font-size: 16px; } }
+
+@media (max-width: 375px) {
+  .page-content__box {
+    padding: 20px 10px; } }
 
 /*============/adaptive===========*/
 /*Reset
