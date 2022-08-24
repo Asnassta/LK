@@ -1,0 +1,427 @@
+/*=============Form===========*/
+.form {
+	&-block {
+		background: url("../images/town.png") center bottom repeat-x, linear-gradient(180deg, #00456E 0%, #00456E 100%, #00385D 100%);
+		padding: 100px 0 265px;
+	}
+	&__title {
+		font-family: $ff;
+		font-size: 40px;
+		font-weight: 700;
+		color: $wh;
+		letter-spacing: 0.01em;
+		line-height: $lh;
+		margin: 0 auto 35px;
+		max-width: 840px;
+		text-align: center;
+	}
+	&__subtitle {
+		font-family: $ff;
+		font-size: 20px;
+		font-weight: 500;
+		color: $wh;
+		line-height: $lh;
+		margin: 0 auto 24px;
+		max-width: 840px;
+	}
+	&-headbox {
+		max-width: 840px;
+		margin: 0 auto;
+		display: flex;
+		>* {
+			width: calc(50% - 5px);
+			margin-right: 10px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		&__link {
+			background-color: $blue;
+			padding: 18px;
+			font-family: $ff;
+			font-size: 18px;
+			font-weight: 700;
+			color: $wh;
+			line-height: $lh;
+			text-align: center;
+			&.active {
+				color: $blue;
+				background-color: $wh;
+			}
+		}
+	}
+	&__box {
+		background-color: $wh;
+		max-width: 840px;
+		margin: 0 auto 0;
+		padding: 50px;
+	}
+	&__inner {
+		max-width: 572px;
+		margin: 0 auto;
+	}
+	&__items {
+		margin-bottom: 25px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__item {
+		margin-bottom: 25px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&-input {
+		input {
+			display: block;
+			padding: 16px 14px;
+			width: 100%;
+			background-color: $wh;
+			border: 1px solid $b-gray;
+			border-radius: 6px;
+			font-family: $ff;
+			font-size: 16px;
+			font-weight: 500;
+			color: $bl;
+			line-height: $lh;
+			box-shadow: none;
+			filter: drop-shadow(0 0 0 #fff);
+			appearance:none;
+			&::placeholder {
+				color: $gray;
+				opacity: 1;
+			}
+			&:disabled {
+				opacity: 1;
+				color: $bl;
+				border: 1px solid $b-gray;
+				background-color: $lblue;
+			}
+		}
+	}
+	&-select {
+		select {
+			display: block;
+			padding: 16px 14px;
+			width: 100%;
+			background-color: $wh;
+			border: 1px solid $b-gray;
+			border-radius: 6px;
+			font-family: $ff;
+			font-size: 16px;
+			font-weight: 500;
+			color: $bl;
+			line-height: $lh;
+			appearance: none;
+			&:disabled {
+				background-color: $lblue;
+			}
+		}
+	}
+	&-checkbox {
+		position: relative;
+		cursor: pointer;
+		margin-right: 20px;
+		&:last-child {
+			margin-right: 0;
+		}
+		label {
+			display: flex;
+			cursor: pointer;
+		}
+		span {
+			display: inline-block;
+			width: 22px;
+			height: 22px;
+			flex: 0 0 22px;
+			border: 1px solid $b-gray;
+			border-radius: 5px;
+			margin-right: 13px;
+			position: relative;
+			&:after {
+				content: "";
+				width: 15px;
+				height: 11.5px;
+				background: url("../images/check.svg") center no-repeat;
+				background-size: contain;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 1;
+				opacity: 0;
+			}
+		}
+		i {
+			font-family: $ff;
+			font-size: 16px;
+			font-weight: 500;
+			font-style: normal;
+			color: $bl;
+			line-height: $lh;
+		}
+		input {
+			opacity: 0;
+			width: 22px;
+			height: 22px;
+			flex: 0 0 22px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			&:checked + label {
+				span {
+					&:after {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+	&__label {
+		font-family: $ff;
+		font-size: 16px;
+		font-weight: 700;
+		color: $blue;
+		line-height: $lh;
+		display: inline-block;
+		margin-bottom: 10px;
+		padding-left: 14px;
+	}
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 28px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__link {
+		font-family: $ff;
+		font-size: 16px;
+		font-weight: 700;
+		color: $blue;
+		line-height: $lh;
+		transition: all .2s linear;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&__buttons {
+		margin-top: 25px;
+		&_center {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		>* {
+			margin-bottom: 25px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	&__auto-center {
+		text-align: center;
+		>* {
+			display: inline-flex;
+			flex-direction: column;
+			align-items: flex-start;
+			margin:  0 auto;
+		}
+		.form__row {
+			flex: 1 1 auto;
+			width: 100%;
+		}
+	}
+	&__description {
+		font-family: $ff;
+		font-size: 20px;
+		font-weight: 500;
+		color: $bl;
+		line-height: $lh;
+		margin-bottom: 30px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+/*=============/form===========*/
+
+/*========Jq-selectbox=======*/
+.jq-selectbox {
+	width: 100%;
+	position: relative;
+	&:before {
+		content: "";
+		width: 6.5px;
+		height: 3.75px;
+		background: url("../images/arrow-small.svg") center no-repeat;
+		position: absolute;
+		top: 50%;
+		right: 14px;
+		z-index: 1;
+		transform: translateY(-50%);
+	}
+	&.dropdown {
+		&:before {
+			transform: translateY(-50%) rotate(180deg);
+		}
+		.jq-selectbox__select {
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+	&.disabled {
+		.jq-selectbox__select {
+			background-color: $lblue;
+		}
+	}
+	&__select {
+		width: 100%;
+		background-color: $wh;
+		padding: 16px 24px 16px 14px;
+		background-color: $wh;
+		border: 1px solid $b-gray;
+		border-radius: 6px;
+		font-family: $ff;
+		font-size: 16px;
+		font-weight: 500;
+		color: $bl;
+		line-height: $lh;
+		appearance: none;
+		&:disabled {
+			background-color: $lblue;
+		}
+	}
+	&__dropdown {
+		top: 100%;
+		width: 100%;
+		background-color: $wh;
+		border-bottom-left-radius: 6px;
+		border-bottom-right-radius: 6px;
+		padding-bottom: 5px;
+		border: 1px solid $b-gray;
+		border-top: none;
+		li {
+			cursor: pointer;
+			padding: 10px 15px;
+			font-family: $ff;
+			font-family: $ff;
+			font-size: 16px;
+			font-weight: 500;
+			color: $bl;
+			line-height: $lh;
+			transition: all .2s linear;
+			&:hover {
+				background-color: $lblue;
+			}
+		}
+	}
+}
+/*========/jq-selectbox=======*/
+
+
+/*===========Adaptive==========*/
+@media(max-width: 765px) {
+	.form {
+		&-block {
+			padding: 60px 0 160px;
+		}
+		&-headbox {
+			&__link {
+				font-size: 14px;
+			}
+		}
+		&__title {
+			font-size: 28px;
+			margin-bottom: 15px;
+		}
+		&__subtitle {
+			font-size: 16px;
+		}
+		&__box {
+			padding: 20px;
+		}
+		&__description {
+			font-size: 14px;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@media(max-width: 414px) {
+	.form {
+		&-block {
+			padding: 40px 0 100px;
+		}
+		&-checkbox {
+			i {
+				font-size: 14px;
+			}
+			a {
+				font-size: 14px;
+			}
+		}
+		&__label {
+			font-size: 14px;
+		}
+		&-input {
+			input {
+				font-size: 14px;
+			}
+		}
+		&__link {
+			font-size: 14px;
+		}
+		&__row {
+			flex-direction: column;
+			align-items: center;
+			>* {
+				margin-right: 0;
+				margin-bottom: 25px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+		&__auto-center {
+			>* {
+				width: 100%;
+			}
+			.form__row {
+				flex-direction: row;
+			}
+			.form__link {
+				margin-bottom: 10px;
+			}
+		}
+		.btn-color-two {
+			width: 100%;
+		}
+	}
+	.jq-selectbox {
+		&__select {
+			font-size: 14px;
+		}
+		&__dropdown {
+			li {
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+@media(max-width: 360px) {
+	.form {
+		&-headbox {
+			&__link {
+				padding: 12px;
+				font-size: 12px;
+			}
+		}
+	}
+}
+/*===========/adaptive==========*/
