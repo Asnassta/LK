@@ -91,6 +91,7 @@
 				opacity: 1;
 			}
 			&:disabled {
+				opacity: 1;
 				color: $bl;
 				border: 1px solid $b-gray;
 				background-color: $lblue;

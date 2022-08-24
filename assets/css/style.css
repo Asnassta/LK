@@ -885,6 +885,7 @@
     color: #999999;
     opacity: 1; }
   .form-input input:disabled {
+    opacity: 1;
     color: #000;
     border: 1px solid #CDD9E4;
     background-color: #F5F9FC; }
