@@ -44,5 +44,12 @@ $(document).ready(function() {
   });
   /*========/header__menu-mobile=========*/
 
+
+    /*======Select-styler=============*/
+  $(function() {
+    $('select').styler();
+  });
+  /*======/select-styler=============*/
+
 });
  
