@@ -883,6 +883,8 @@
     color: #999999;
     opacity: 1; }
   .form-input input:disabled {
+    color: #000;
+    border: 1px solid #CDD9E4;
     background-color: #F5F9FC; }
 
 .form-select select {

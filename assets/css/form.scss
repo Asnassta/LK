@@ -90,6 +90,8 @@
 				opacity: 1;
 			}
 			&:disabled {
+				color: $bl;
+				border: 1px solid $b-gray;
 				background-color: $lblue;
 			}
 		}
