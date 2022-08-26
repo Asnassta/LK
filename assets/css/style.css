@@ -2278,7 +2278,13 @@ body.hidden {
     font-size: 13px;
     padding: 16px; }
   .btn {
-    font-size: 13px; } }
+    font-size: 13px; }
+  .calendar-time__inner {
+    margin-left: -15px;
+    margin-bottom: -15px; }
+  .calendar-time__checkbox {
+    margin-left: 15px;
+    margin-bottom: 15px; } }
 
 @media (max-width: 375px) {
   .calendar-box-days__title {

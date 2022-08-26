@@ -912,6 +912,18 @@ body.hidden {
 	.btn {
 		font-size: 13px;
 	}
+	.calendar {
+		&-time {
+			&__inner {
+				margin-left: -15px;
+				margin-bottom: -15px;
+			}
+			&__checkbox {
+				margin-left: 15px;
+				margin-bottom: 15px;
+			}
+		}
+	}
 }
 
 @media(max-width: 375px) {
