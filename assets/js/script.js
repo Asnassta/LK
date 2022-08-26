@@ -44,12 +44,38 @@ $(document).ready(function() {
   });
   /*========/header__menu-mobile=========*/
 
+  /*=========Calendar===========*/
+  $(".calendar-box__day.available").on("click", function() {
+      $(this).addClass('checked');
+      $(".calendar-box__day").not(this).removeClass('checked');
+  });
+
+    $('.calendar-box__day.available').on("click", function() {
+      $(this).addClass('checked');
+      $(".calendar-box__day").not(this).removeClass('checked');
+      $('.calendar-time__wrapper').hide();
+      $('.calendar-time__wrapper').hide().removeClass('checked');
+      $('.calendar-time__wrapper.'+$(this).attr('data-day')).fadeIn(222);
+    });
+
+  /*=========/calendar===========*/
+
 
     /*======Select-styler=============*/
   $(function() {
     $('select').styler();
   });
   /*======/select-styler=============*/
+
+  /*============Sliders============*/
+  $('.calendar-box__inner').slick({
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: $('.calendar-box__arrow_prev'),
+    nextArrow: $('.calendar-box__arrow_next'),
+  });
+  /*============/sliders============*/
 
 });
  
