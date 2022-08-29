@@ -286,7 +286,7 @@
 					color: $bl;
 					line-height: $lh;
 					display: block;
-					letter-spacing: 0.085em;
+					letter-spacing: 0;
 					text-transform: uppercase;
 				}
 			}
@@ -423,6 +423,9 @@
 		display: flex;
 		align-items: center;
 		margin-bottom: 54px;
+		img {
+			width: 50px;
+		}
 		&__info {
 			margin-left: 30px;
 			font-family: $ff;
@@ -440,7 +443,7 @@
 					color: $bl;
 					line-height: $lh;
 					display: block;
-					letter-spacing: 0.085em;
+					letter-spacing: 0;
 					text-transform: uppercase;
 				}
 			}
@@ -493,7 +496,7 @@
 			}
 			a {
 				font-family: $ff;
-				font-size: 13px;
+				font-size: 14px;
 				font-weight: 400;
 				color: $bl;
 				line-height: $lh;
@@ -780,19 +783,18 @@
 			}
 		}
 	}
-}
-
-.footer {
-	&-title {
-		img {
-		width: 30px;
-		}
-		&__info {
-			margin-left: 10px;
-			span {
-				font-size: 10px;
+	.footer {
+		&-title {
+			img {
+			width: 30px;
+			}
+			&__info {
+				margin-left: 10px;
+				span {
+					font-size: 10px;
+				}
 			}
 		}
-	}
+}
 }
 /*==============/adaptive===============*/

@@ -174,13 +174,18 @@ body.hidden {
 }
 
 .link {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
 	font-family: $ff;
 	font-size: 14px;
 	font-weight: 500;
 	color: $dblue;
 	line-height: $lh;
 	transition: all .2s linear;
+	img {
+		margin-right: 8px;
+		margin-top: 3px;
+	}
 	&:hover {
 		color: $blue;
 		text-decoration: underline;
@@ -193,7 +198,7 @@ body.hidden {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 25px 28px;
+		padding: 23px 28px;
 		background-color: $wh;
 		border-bottom: 1px solid #F2F9FB;
 		position: relative;
@@ -329,6 +334,7 @@ body.hidden {
 		display: flex;
 		align-items: center;
 		margin-bottom: 20px;
+		position: relative;
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -363,7 +369,7 @@ body.hidden {
 			font-family: $ff;
 			font-size: 16px;
 			font-weight: 500;
-			color: $blue;
+			color: $dblue;
 			line-height: $lh;
 			margin-bottom: 2px;
 		}
@@ -420,6 +426,167 @@ body.hidden {
 			&:hover {
 				svg {
 					fill: $blue;
+				}
+			}
+		}
+		&__menu {
+			cursor: pointer;
+			svg {
+				width: 24px;
+				height: 24px;
+				fill: $dblue;
+				transition: all .2s linear;
+			}
+			&:hover {
+				svg {
+					fill: $blue;
+				}
+			}
+			&.active {
+				svg {
+					fill: $bl;
+				}
+			}
+		}
+		&__dropdown {
+			display: none;
+			width: 200px;
+			padding: 2px 0;
+			background-color: $wh;
+			border: 1px solid #E4EBF1;
+			box-shadow: 0px 8px 24px rgba(129, 135, 189, 0.25);
+			position: absolute;
+			right: 0;
+			top: calc(100% - 25px);
+			z-index: 20;
+		}
+		&__link {
+			display: flex;
+			padding: 11px 12px;
+			transition: all .2s linear;
+			background-color: $wh;
+			img {
+				width: 16px;
+				margin-right: 10px;
+			}
+			span {
+				font-family: $ff;
+				font-size: 14px;
+				font-weight: 500;
+				color: $bl;
+				line-height: $lh;
+				transition: all .2s linear;
+
+			}
+			&:hover {
+				background-color: #E7ECF2;
+			}
+		}
+	}
+	&-nav {
+		display: flex;
+		background-color: $wh;
+		border: 1px solid #E4EBF1;
+		margin-bottom: 30px;
+		&__item {
+			display: inline-flex;
+			align-items: center;
+			padding: 24px 30px;
+			background-color: $wh;
+			position: relative;
+			span {
+				font-family: $ff;
+				font-size: 16px;
+				font-weight: 500;
+				color: $bl;
+				line-height: $lh;
+				margin-left: 17px;
+				transition: all .2s linear;
+				&:first-child {
+					margin-left: 0;
+				}
+			}
+			&:after {
+				content: "";
+				width: 100%;
+				height: 3px;
+				background-color: $dblue;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				z-index: 1;
+				opacity: 0;
+			}
+			&:hover {
+				span {
+					color: $dblue;
+				}
+			}
+			&.active {
+				&:after {
+					opacity: 1;
+				}
+			}
+		}
+		&-data {
+			margin-left: 50px;
+			flex: 1 1 auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 24px 30px 24px 50px;
+			position: relative;
+			&:before {
+				content: "";
+				width: 1px;
+				height: 60px;
+				background-color: $lgray;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				z-index: 1;
+				transform: translateY(-50%);
+			}
+			&__input {
+				position: relative;
+				padding-left: 50px;
+				margin-right: 20px;
+				input {
+					width: 100%;
+					background-color: $wh;
+					border: none;
+					border-radius: 0;
+					font-family: $ff;
+					font-size: 16px;
+					font-weight: 500;
+					color: $bl;
+					line-height: $lh;
+					&::placeholder {
+						opacity: 1;
+					}
+				}
+				img {
+					position: absolute;
+					top: 50%;
+					left: 0;
+					z-index: 1;
+					transform: translateY(-50%);
+
+				}
+			}
+			&__delete {
+				display: inline-block;
+				cursor: pointer;
+				svg {
+					width: 12px;
+					height: 12px;
+					fill: $dblue;
+					transition: all .2s linear;
+				}
+				&:hover {
+					svg {
+						fill: $red;
+					}
 				}
 			}
 		}
@@ -739,8 +906,136 @@ body.hidden {
 }
 /*=========/calendar============*/
 
+/*=========Data-box=======*/
+.data-box {
+	margin-top: 20px;
+	background-color: $wh;
+	border: 1px solid #E4EBF1;
+	&:first-child {
+		margin-top: 0;
+	}
+	&__header {
+		display: flex;
+		background-color: $wh;
+		box-shadow: 0px 0px 24px rgba(164, 164, 164, 0.25);
+	}
+	&__photo {
+		padding: 35px 35px 40px 45px;
+		background-color: $blue;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__inner {
+		flex: 1 1 auto;
+		padding: 30px 30px 35px;
+	}
+	&__title {
+		font-family: $ff;
+		font-size: 16px;
+		font-weight: 700;
+		color: $bl;
+		line-height: $lh;
+		margin-bottom: 10px;
+	}
+	&__search {
+		display: flex;
+		margin-bottom: 15px;
+		input {
+			display: block;
+			flex: 1 1 auto;
+			padding: 16px 13px;
+			border: 1px solid #CDD9E4;
+			border-radius: 6px 0px 0px 6px;
+			background-color: $wh;
+			font-family: $ff;
+			font-size: 16px;
+			font-weight: 500;
+			color: $bl;
+			line-height: $lh;
+			&::placeholder {
+				color: $gray;
+			}
+		}
+		.btn-color-two {
+			min-width: 28%;
+			border-radius: 0 6px 6px 0;
+		}
+	}
+	&__description {
+		font-family: $ff;
+		font-size: 14px;
+		font-weight: 400;
+		color: $gray;
+		line-height: $lh;
+	}
+	&__content {
+		max-width: 690px;
+		margin: 0 auto;
+		padding: 40px 15px;
+	}
+	&__item {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		margin-bottom: 30px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__name {
+		width: 65%;
+		padding-right: 30px;
+		display: flex;
+		span {
+			display: inline-block;
+			margin-right: 30px;
+			font-family: $ff;
+			font-size: 16px;
+			font-weight: 500;
+			color: $bl;
+			line-height: $lh;
+		}
+	}
+	&__line {
+		flex: 1 1 auto;
+		border-bottom: 1px solid $lgray;
+	}
+	&__info {
+		width: 35%;
+		font-family: $ff;
+		font-size: 16px;
+		font-weight: 400;
+		color: $bl;
+		line-height: $lh;
+	}
+}
+/*=========/data-box=======*/
+
 
 /*==========Adaptive==============*/
+@media(max-width: 1330px) {
+	.info {
+		&-nav {
+			&__item {
+				padding: 20px 15px;
+				span {
+					font-size: 14px;
+				}
+			}
+			&-data {
+				padding: 20px 15px 20px 20px;
+				margin-left: 20px;
+				&__input {
+					padding-left: 35px;
+					input {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}
 @media(max-width: 1200px) {
 	.navbar {
 		&-item {
@@ -769,6 +1064,40 @@ body.hidden {
 }
 
 @media(max-width: 992px) {
+	.data-box {
+		&__photo {
+			padding: 20px;
+			img {
+				width: 80px;
+			}
+		}
+		&__inner {
+			padding: 15px;
+		}
+	}
+	.info {
+		&-nav {
+			flex-wrap: wrap;
+			&__item {
+				width: 100%;
+				flex: 1 1 100%;
+				margin-right: 0;
+				&:after {
+					width: 3px;
+					height: 100%;
+
+				}
+			}
+			&-data {
+				width: 100%;
+				margin-left: 0;
+				padding-left: 15px;
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
 	.calendar {
 		display: block;
 		&-item {
@@ -851,6 +1180,39 @@ body.hidden {
 }
 
 @media(max-width: 546px) {
+	.data-box {
+		&__header {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		&__photo {
+			padding: 10px;
+			img {
+				width: 40px;
+			}
+		}
+		&__search {
+			input {
+				font-size: 14px;
+			}
+		}
+		&__inner {
+			width: 100%;
+		}
+		&__item {
+			margin-bottom: 15px;
+		}
+		&__name {
+			padding-right: 10px;
+			span {
+				font-size: 14px;
+				margin-right: 10px;
+			}
+		}
+		&__info {
+			font-size: 14px;
+		}
+	}
 	.data-list {
 		&__buttons {
 			flex-direction: column;
@@ -912,6 +1274,27 @@ body.hidden {
 	.btn {
 		font-size: 13px;
 	}
+	.data-box {
+		&__title {
+			font-size: 14px;
+		}
+		&__search {
+			input {
+				padding: 12px;
+			}
+			.btn-color-two {
+				&__icon {
+					display: none;
+				}
+				&:after {
+					display: none;
+				}
+			}
+		}
+		&__content {
+			padding: 25px 15px;
+		}
+	}
 	.calendar {
 		&-time {
 			&__inner {
@@ -927,6 +1310,16 @@ body.hidden {
 }
 
 @media(max-width: 375px) {
+	.data-box {
+		&__name {
+			span {
+				font-size: 12px;
+			}
+		}
+		&__info {
+			font-size: 12px;
+		}
+	}
 	.calendar {
 		&-box {
 			&-days {
@@ -948,6 +1341,18 @@ body.hidden {
 					width: 100%;
 				}
 			}
+		}
+	}
+}
+@media(max-width: 320px) {
+	.data-box {
+		&__name {
+			span {
+				font-size: 10px;
+			}
+		}
+		&__info {
+			font-size: 10px;
 		}
 	}
 }
