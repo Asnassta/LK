@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/slick.css">
+	<link href="assets/css/jquery.formstyler.css" rel="stylesheet"/>
+	<title>Центр управления городским имуществом</title>
+</head>
+<body>
+
+	<!--Sprite-->
+	<svg style="display: none;">
+		<symbol id="dots-vertical" viewBox="0 0 24 24">
+			 <g>
+    			<g>
+     				<path d="M14.25 19.5C14.25 20.0967 14.0129 20.669 13.591 21.091C13.169 21.5129 12.5967 21.75 12 21.75C11.4033 21.75 10.831 21.5129 10.409 21.091C9.98705 20.669 9.75 20.0967 9.75 19.5C9.75 18.9033 9.98705 18.331 10.409 17.909C10.831 17.4871 11.4033 17.25 12 17.25C12.5967 17.25 13.169 17.4871 13.591 17.909C14.0129 18.331 14.25 18.9033 14.25 19.5ZM14.25 12C14.25 12.5967 14.0129 13.169 13.591 13.591C13.169 14.0129 12.5967 14.25 12 14.25C11.4033 14.25 10.831 14.0129 10.409 13.591C9.98705 13.169 9.75 12.5967 9.75 12C9.75 11.4033 9.98705 10.831 10.409 10.409C10.831 9.98705 11.4033 9.75 12 9.75C12.5967 9.75 13.169 9.98705 13.591 10.409C14.0129 10.831 14.25 11.4033 14.25 12ZM14.25 4.5C14.25 5.09674 14.0129 5.66903 13.591 6.09099C13.169 6.51295 12.5967 6.75 12 6.75C11.4033 6.75 10.831 6.51295 10.409 6.09099C9.98705 5.66903 9.75 5.09674 9.75 4.5C9.75 3.90326 9.98705 3.33097 10.409 2.90901C10.831 2.48705 11.4033 2.25 12 2.25C12.5967 2.25 13.169 2.48705 13.591 2.90901C14.0129 3.33097 14.25 3.90326 14.25 4.5Z"/>
+    			</g>
+ 			 </g>
+		</symbol>
+		<symbol id="arrow-icon" viewBox="0 0 20 20">
+			 <g>
+    			<g>
+     				<path fill-rule="evenodd" clip-rule="evenodd" d="M14.1926 2.05749C14.2508 2.11555 14.297 2.18451 14.3285 2.26045C14.36 2.33638 14.3763 2.41778 14.3763 2.49999C14.3763 2.5822 14.36 2.6636 14.3285 2.73953C14.297 2.81546 14.2508 2.88443 14.1926 2.94249L7.13389 9.99999L14.1926 17.0575C14.31 17.1748 14.3759 17.334 14.3759 17.5C14.3759 17.666 14.31 17.8251 14.1926 17.9425C14.0753 18.0598 13.9161 18.1258 13.7501 18.1258C13.5842 18.1258 13.425 18.0598 13.3076 17.9425L5.80764 10.4425C5.74944 10.3844 5.70326 10.3155 5.67175 10.2395C5.64024 10.1636 5.62402 10.0822 5.62402 9.99999C5.62402 9.91778 5.64024 9.83638 5.67175 9.76045C5.70326 9.68451 5.74944 9.61554 5.80764 9.55749L13.3076 2.05749C13.3657 1.99928 13.4347 1.95311 13.5106 1.9216C13.5865 1.89009 13.6679 1.87387 13.7501 1.87387C13.8323 1.87387 13.9137 1.89009 13.9897 1.9216C14.0656 1.95311 14.1346 1.99928 14.1926 2.05749Z"/>
+    			</g>
+ 			 </g>
+		</symbol>
+		<symbol id="paperclip" viewBox="0 0 24 24">
+			 <g>
+    			<g>
+     				<path d="M6.75 4.5C6.75 3.50544 7.14509 2.55161 7.84835 1.84835C8.55161 1.14509 9.50544 0.75 10.5 0.75C11.4946 0.75 12.4484 1.14509 13.1517 1.84835C13.8549 2.55161 14.25 3.50544 14.25 4.5V18C14.25 18.5967 14.0129 19.169 13.591 19.591C13.169 20.0129 12.5967 20.25 12 20.25C11.4033 20.25 10.831 20.0129 10.409 19.591C9.98705 19.169 9.75 18.5967 9.75 18V7.5C9.75 7.30109 9.82902 7.11032 9.96967 6.96967C10.1103 6.82902 10.3011 6.75 10.5 6.75C10.6989 6.75 10.8897 6.82902 11.0303 6.96967C11.171 7.11032 11.25 7.30109 11.25 7.5V18C11.25 18.1989 11.329 18.3897 11.4697 18.5303C11.6103 18.671 11.8011 18.75 12 18.75C12.1989 18.75 12.3897 18.671 12.5303 18.5303C12.671 18.3897 12.75 18.1989 12.75 18V4.5C12.75 4.20453 12.6918 3.91194 12.5787 3.63896C12.4657 3.36598 12.2999 3.11794 12.091 2.90901C11.8821 2.70008 11.634 2.53434 11.361 2.42127C11.0881 2.3082 10.7955 2.25 10.5 2.25C10.2045 2.25 9.91194 2.3082 9.63896 2.42127C9.36598 2.53434 9.11794 2.70008 8.90901 2.90901C8.70008 3.11794 8.53434 3.36598 8.42127 3.63896C8.3082 3.91194 8.25 4.20453 8.25 4.5V18C8.25 18.9946 8.64509 19.9484 9.34835 20.6516C10.0516 21.3549 11.0054 21.75 12 21.75C12.9946 21.75 13.9484 21.3549 14.6517 20.6516C15.3549 19.9484 15.75 18.9946 15.75 18V7.5C15.75 7.30109 15.829 7.11032 15.9697 6.96967C16.1103 6.82902 16.3011 6.75 16.5 6.75C16.6989 6.75 16.8897 6.82902 17.0303 6.96967C17.171 7.11032 17.25 7.30109 17.25 7.5V18C17.25 19.3924 16.6969 20.7277 15.7123 21.7123C14.7277 22.6969 13.3924 23.25 12 23.25C10.6076 23.25 9.27226 22.6969 8.28769 21.7123C7.30312 20.7277 6.75 19.3924 6.75 18V4.5Z"/>
+    			</g>
+ 			 </g>
+		</symbol>
+		<symbol id="file-icon" viewBox="0 0 32 32">
+			 <g>
+    			<g>
+     				 <path d="M17.0003 13C17.0003 12.7348 16.8949 12.4804 16.7074 12.2929C16.5199 12.1054 16.2655 12 16.0003 12C15.7351 12 15.4807 12.1054 15.2932 12.2929C15.1056 12.4804 15.0003 12.7348 15.0003 13V20.586L12.7083 18.292C12.6153 18.199 12.5049 18.1253 12.3835 18.075C12.262 18.0246 12.1318 17.9987 12.0003 17.9987C11.8688 17.9987 11.7386 18.0246 11.6171 18.075C11.4956 18.1253 11.3853 18.199 11.2923 18.292C11.1993 18.385 11.1256 18.4954 11.0752 18.6168C11.0249 18.7383 10.999 18.8685 10.999 19C10.999 19.1315 11.0249 19.2617 11.0752 19.3832C11.1256 19.5046 11.1993 19.615 11.2923 19.708L15.2923 23.708C15.3852 23.8011 15.4955 23.875 15.617 23.9254C15.7385 23.9758 15.8688 24.0018 16.0003 24.0018C16.1318 24.0018 16.2621 23.9758 16.3836 23.9254C16.505 23.875 16.6154 23.8011 16.7083 23.708L20.7083 19.708C20.8013 19.615 20.875 19.5046 20.9253 19.3832C20.9757 19.2617 21.0015 19.1315 21.0015 19C21.0015 18.8685 20.9757 18.7383 20.9253 18.6168C20.875 18.4954 20.8013 18.385 20.7083 18.292C20.6153 18.199 20.5049 18.1253 20.3835 18.075C20.262 18.0246 20.1318 17.9987 20.0003 17.9987C19.8688 17.9987 19.7386 18.0246 19.6171 18.075C19.4956 18.1253 19.3853 18.199 19.2923 18.292L17.0003 20.586V13Z"/>
+					<path d="M28 28V9L19 0H8C6.93913 0 5.92172 0.421427 5.17157 1.17157C4.42143 1.92172 4 2.93913 4 4V28C4 29.0609 4.42143 30.0783 5.17157 30.8284C5.92172 31.5786 6.93913 32 8 32H24C25.0609 32 26.0783 31.5786 26.8284 30.8284C27.5786 30.0783 28 29.0609 28 28ZM19 6C19 6.79565 19.3161 7.55871 19.8787 8.12132C20.4413 8.68393 21.2044 9 22 9H26V28C26 28.5304 25.7893 29.0391 25.4142 29.4142C25.0391 29.7893 24.5304 30 24 30H8C7.46957 30 6.96086 29.7893 6.58579 29.4142C6.21071 29.0391 6 28.5304 6 28V4C6 3.46957 6.21071 2.96086 6.58579 2.58579C6.96086 2.21071 7.46957 2 8 2H19V6Z"/>
+    			</g>
+ 			 </g>
+		</symbol>
+		<symbol id="close-icon_2" viewBox="0 0 12 12">
+			 <g>
+    			<g>
+     				 <path d="M0.969364 0.969001C1.03903 0.899156 1.1218 0.843742 1.21291 0.805932C1.30403 0.768123 1.40171 0.748661 1.50036 0.748661C1.59901 0.748661 1.6967 0.768123 1.78781 0.805932C1.87893 0.843742 1.9617 0.899156 2.03136 0.969001L6.00036 4.9395L9.96936 0.969001C10.0391 0.899269 10.1219 0.843955 10.213 0.806216C10.3041 0.768478 10.4017 0.749054 10.5004 0.749054C10.599 0.749054 10.6966 0.768478 10.7877 0.806216C10.8788 0.843955 10.9616 0.899269 11.0314 0.969001C11.1011 1.03873 11.1564 1.12152 11.1941 1.21263C11.2319 1.30374 11.2513 1.40139 11.2513 1.5C11.2513 1.59862 11.2319 1.69627 11.1941 1.78738C11.1564 1.87849 11.1011 1.96127 11.0314 2.031L7.06086 6L11.0314 9.969C11.1011 10.0387 11.1564 10.1215 11.1941 10.2126C11.2319 10.3037 11.2513 10.4014 11.2513 10.5C11.2513 10.5986 11.2319 10.6963 11.1941 10.7874C11.1564 10.8785 11.1011 10.9613 11.0314 11.031C10.9616 11.1007 10.8788 11.156 10.7877 11.1938C10.6966 11.2315 10.599 11.2509 10.5004 11.2509C10.4017 11.2509 10.3041 11.2315 10.213 11.1938C10.1219 11.156 10.0391 11.1007 9.96936 11.031L6.00036 7.0605L2.03136 11.031C1.96163 11.1007 1.87885 11.156 1.78774 11.1938C1.69663 11.2315 1.59898 11.2509 1.50036 11.2509C1.40175 11.2509 1.3041 11.2315 1.21299 11.1938C1.12188 11.156 1.0391 11.1007 0.969364 11.031C0.899632 10.9613 0.844317 10.8785 0.806579 10.7874C0.76884 10.6963 0.749416 10.5986 0.749416 10.5C0.749416 10.4014 0.76884 10.3037 0.806579 10.2126C0.844317 10.1215 0.899632 10.0387 0.969364 9.969L4.93986 6L0.969364 2.031C0.899519 1.96133 0.844104 1.87857 0.806295 1.78745C0.768485 1.69633 0.749023 1.59865 0.749023 1.5C0.749023 1.40135 0.768485 1.30367 0.806295 1.21255C0.844104 1.12143 0.899519 1.03867 0.969364 0.969001Z"/>
+    			</g>
+ 			 </g>
+		</symbol>
+		<symbol id="close-icon_thin" viewBox="0 0 329.269 329">
+			 <g>
+    			<g>
+     				 <path d="M194.8 164.77L323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0015.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0015.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0"/>
+    			</g>
+ 			 </g>
+		</symbol>
+		<symbol id="close-icon" viewBox="0 0 180.11 179.87">
+			 <g>
+    			<g>
+     				 <path d="M174.29,146,118.14,89.94l56.15-56.07a19.84,19.84,0,1,0-28-28.06L90.05,61.92,33.86,5.81a19.83,19.83,0,1,0-28,28.06L62,89.94,5.82,146a19.84,19.84,0,0,0,28,28.07L90.05,118l56.19,56.11a19.84,19.84,0,1,0,28-28.07Z"/>
+    			</g>
+ 			 </g>
+		</symbol>
+		<symbol id="star-icon" viewBox="0 0 24 23">
+			<g>
+				<path d="M5.3716 22.9996C5.18006 22.9993 4.99105 22.9559 4.81857 22.8726C4.64609 22.7894 4.49455 22.6683 4.3752 22.5185C4.25585 22.3687 4.17173 22.194 4.12909 22.0073C4.08644 21.8205 4.08637 21.6266 4.12886 21.4398L5.67266 14.6386L0.436335 10.0462C0.248409 9.88175 0.112836 9.66581 0.0464026 9.4251C-0.0200312 9.18439 -0.0144086 8.92948 0.0625744 8.69193C0.139557 8.45439 0.28452 8.24463 0.479514 8.08864C0.674508 7.93266 0.91097 7.83728 1.15962 7.81433L8.08769 7.18591L10.8268 0.774956C10.9246 0.54449 11.0881 0.347916 11.2969 0.209732C11.5057 0.0715473 11.7506 -0.00213623 12.001 -0.00213623C12.2513 -0.00213623 12.4962 0.0715473 12.705 0.209732C12.9138 0.347916 13.0773 0.54449 13.1751 0.774956L15.9119 7.18591L22.839 7.8148C23.0878 7.83743 23.3245 7.93257 23.5198 8.08843C23.715 8.2443 23.8602 8.45403 23.9374 8.69164C24.0146 8.92924 24.0204 9.18428 23.9541 9.42514C23.8877 9.66601 23.7522 9.88211 23.5642 10.0467L18.3278 14.6377L19.8721 21.4384C19.9277 21.682 19.9105 21.9366 19.8227 22.1705C19.7349 22.4044 19.5803 22.6073 19.3781 22.7541C19.176 22.9009 18.9351 22.985 18.6855 22.9961C18.4359 23.0072 18.1886 22.9447 17.9742 22.8164L12 19.247L6.02585 22.8188C5.82801 22.9369 5.60198 22.9993 5.3716 22.9996ZM12 17.7088C12.2303 17.7089 12.4562 17.7714 12.6538 17.8896L18.2921 21.2618L16.8348 14.8415C16.7839 14.6171 16.7946 14.383 16.8657 14.1642C16.9369 13.9453 17.0659 13.7498 17.2392 13.5983L22.1833 9.26231L15.6399 8.66912C15.4097 8.64851 15.1895 8.56568 15.0028 8.42951C14.816 8.29333 14.6699 8.10893 14.5799 7.89605L11.9967 1.84721L9.41356 7.89699C9.32426 8.1088 9.17907 8.29236 8.99351 8.42803C8.80796 8.56371 8.58901 8.64639 8.36009 8.66725L1.81575 9.26138L6.75947 13.5973C6.93316 13.7487 7.06252 13.9444 7.13374 14.1635C7.20495 14.3826 7.21536 14.6169 7.16385 14.8415L5.70788 21.2604L11.3439 17.8896C11.5422 17.771 11.769 17.7085 12 17.7088ZM15.9631 7.30615V7.3085C15.9631 7.3085 15.964 7.30709 15.9631 7.30615Z"/>
+			</g>
+		</symbol>
+		<symbol id="search-icon" viewBox="0 0 24 24">
+			<g>
+				<path d="M23.8533 22.4395L16.8816 15.4688C18.2528 13.7823 19.0009 11.6747 18.9998 9.50109C18.9998 4.26188 14.7384 0 9.50016 0C4.26188 0 0 4.26188 0 9.50016C0 14.7384 4.26188 18.9998 9.50016 18.9998C11.6741 19.0011 13.782 18.253 15.4688 16.8816L22.4395 23.8533C22.4859 23.8998 22.541 23.9367 22.6016 23.9618C22.6623 23.987 22.7273 23.9999 22.793 23.9999C22.8586 23.9999 22.9236 23.987 22.9843 23.9618C23.0449 23.9367 23.1 23.8998 23.1464 23.8533L23.8538 23.1464C23.9002 23.1 23.9369 23.0448 23.962 22.9842C23.9871 22.9235 24 22.8585 24 22.7929C23.9999 22.7272 23.987 22.6622 23.9618 22.6016C23.9366 22.541 23.8997 22.4859 23.8533 22.4395ZM9.50016 17.002C5.36437 17.002 2.00016 13.6378 2.00016 9.50203C2.00016 5.36625 5.36437 2.00203 9.50016 2.00203C13.6359 2.00203 17.0002 5.36625 17.0002 9.50203C17.0002 13.6378 13.6359 17.0002 9.50016 17.0002V17.002Z"/>
+			</g>
+		</symbol>
+	</svg>
+
+	<div class="wrapper">
+		<header class="header">
+			<nav class="header__nav">
+				<div class="container">
+					<div class="header__inner">
+						<div class="header__links">
+							<div class="header__link header__drop">
+								<span>О предприятии</span>
+								<div class="header__dropdown">
+									<a href="#" class="header__link">О нас</a>
+									<a href="#" class="header__link">Документы</a>
+									<a href="#" class="header__link">Контакты</a>
+									<a href="#" class="header__link">Реквизиты</a>
+								</div>
+							</div>
+							<div class="header__link header__drop">
+								<span>Деятельность</span>
+								<div class="header__dropdown">
+									<a href="#" class="header__link">Информация для юридических лиц и ИП</a>
+									<a href="#" class="header__link">Информация для граждан</a>
+								</div>
+							</div>
+							<div class="header__link header__drop">
+								<span>Услуги</span>
+								<div class="header__dropdown">
+									<a href="#" class="header__link">Перечень услуг</a>
+									<a href="#" class="header__link">Информация о готовности документов</a>
+									<a href="#" class="header__link">Архивные копии документов</a>
+									<a href="#" class="header__link">Консультации</a>
+									<a href="#" class="header__link">Аренда машино-мест</a>
+									<a href="#" class="header__link">Интерактивные карты паркингов</a>
+								</div>
+							</div>
+							<a href="#" class="header__link">Мероприятия</a>
+							<a href="#" class="header__link">Вопрос-ответ</a>
+						</div>
+						<div class="header__buttons">
+							<div class="header__buttons__inner">
+								<a href="#" class="header__btn-search">
+									<svg>
+										<use xlink:href="#search-icon"></use>
+									</svg>
+								</a>
+								<a href="#" class="header-favorite">
+									<svg>
+										<use xlink:href="#star-icon"></use>
+									</svg>
+									<span>80</span>
+								</a>
+								<div class="burger">
+									<span class="burger__item"></span>
+								</div>
+							</div>
+							<a href="#" class="header__btn">Иванов И.</a>
+						</div>
+						<div class="header-search">
+							<form action="#" class="header-search__inner">
+								<div class="header-search__input">
+									<span class="header-search__icon">
+										<svg>
+											<use xlink:href="#search-icon"></use>
+										</svg>
+									</span>
+									<input type="text" placeholder="Поиск">
+									<button type="submit">
+										<span>Найти</span>
+										<svg>
+											<use xlink:href="#search-icon"></use>
+										</svg>
+									</button>
+								</div>
+								<div class="header-search__close">
+									<svg>
+										<use xlink:href="#close-icon"></use>
+									</svg>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</nav><!--/header__nav-->
+			<div class="header__menu">
+				<div class="container">
+					<div class="header__inner">
+						<a href="/" class="header-logo">
+							<img src="assets/images/logo.svg" alt="">
+							<div class="header-logo__info">
+								<span>Государственное унитарное предприятие</span>
+								<span>«Центр управления городским имуществом»</span>
+							</div>
+						</a>
+						<div class="header__links header__links_big">
+							<div class="header__link header__drop">
+								<span>Каталог недвижимости</span>
+								<div class="header__dropdown">
+									<a href="#" class="header__link">Жилая недвижимость</a>
+									<a href="#" class="header__link">Коммерческая недвижимость</a>
+									<a href="#" class="header__link">Машино-места</a>
+								</div>
+							</div>
+							<a href="#" class="header__link">Календарь торгов</a>
+							<a href="#" class="header__link">Новости</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header__menu-mobile">
+				<a href="#" class="header__menu-mobile__close">
+					<svg>
+						<use xlink:href="#close-icon_thin"></use>
+					</svg>
+				</a>
+				<div class="header__menu-mobile__inner">
+					<div class="header__link header__drop">
+						<span>О предприятии</span>
+						<div class="header__dropdown">
+							<a href="#" class="header__link">О нас</a>
+							<a href="#" class="header__link">Документы</a>
+							<a href="#" class="header__link">Контакты</a>
+							<a href="#" class="header__link">Реквизиты</a>
+						</div>
+					</div>
+					<div class="header__link header__drop">
+						<span>Деятельность</span>
+						<div class="header__dropdown">
+							<a href="#" class="header__link">Информация для юридических лиц и ИП</a>
+							<a href="#" class="header__link">Информация для граждан</a>
+						</div>
+					</div>
+					<div class="header__link header__drop">
+						<span>Услуги</span>
+						<div class="header__dropdown">
+							<a href="#" class="header__link">Перечень услуг</a>
+							<a href="#" class="header__link">Информация о готовности документов</a>
+							<a href="#" class="header__link">Архивные копии документов</a>
+							<a href="#" class="header__link">Консультации</a>
+							<a href="#" class="header__link">Аренда машино-мест</a>
+							<a href="#" class="header__link">Интерактивные карты паркингов</a>
+						</div>
+					</div>
+					<a href="#" class="header__link">Мероприятия</a>
+					<a href="#" class="header__link">Вопрос-ответ</a>
+					<div class="header__link header__drop">
+						<span>Каталог недвижимости</span>
+						<div class="header__dropdown">
+							<a href="#" class="header__link">Жилая недвижимость</a>
+							<a href="#" class="header__link">Коммерческая недвижимость</a>
+							<a href="#" class="header__link">Машино-места</a>
+						</div>
+					</div>
+					<a href="#" class="header__link">Календарь торгов</a>
+					<a href="#" class="header__link">Новости</a>
+					<div class="header-contact">
+						<a href="tel:84951379758" class="header-contact__phone">8 (495) 137-97-58</a>
+						<div class="header-contact__link">
+							<a href="mailto:info@cugimos.ru">info@cugimos.ru</a>
+						</div>
+						<div class="header-contact__info">г. Москва, Стремянный переулок дом 38</div>
+					</div>
+					<div class="header-social">
+						<a href="#" class="header-social__icon" target="blank">
+							<img src="assets/images/vk-icon.svg" alt="">
+						</a>
+						<a href="#" class="header-social__icon" target="blank">
+							<img src="assets/images/tg-icon.svg" alt="">
+						</a>
+					</div>
+				</div>
+			</div><!--/header__menu-mobile-->
+		</header><!--/header-->
+		<main class="main">
+			<div class="page page-client page_messages">
+				<div class="page-header page-header_client">
+					<div class="container">
+						<div class="page-header__inner">
+							<div class="page-header__person">
+								<a href="#" class="page-header__icon">
+									<span>КА</span>
+								</a>
+								<div class="page-header__info">
+									<a href="#" class="page-header__name">Иванов Иван Иванович</a>
+									<div class="page-header__data">ООО “Василек”</div>
+								</div>
+							</div>
+							<div class="page-header__buttons">
+								<a href="#" class="btn-icon">
+									<img src="assets/images/pencil-square.svg" alt="">
+									<span>Обратная связь</span>
+								</a>
+								<a href="#" class="btn-icon">
+									<img src="assets/images/calendar-check.svg" alt="">
+									<span>Записаться на прием</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div><!--/page-header-->
+				<div class="page__wrapper">
+					<div class="container">
+						<div class="page__inner page__inner_flex">
+							<div class="page-sidebar">
+								<div class="navbar">
+									<div class="navbar__inner">
+										<a href="#" class="navbar-item">
+											<div class="navbar-item__title">
+												<img src="assets/images/home-icon.svg" alt="">
+												<span>Личный кабинет</span>
+											</div>
+										</a>
+										<a href="#" class="navbar-item">
+											<div class="navbar-item__title">
+												<img src="assets/images/file-earmark-text.svg" alt="">
+												<span>Документы</span>
+											</div>
+											<span class="navbar__stat">80</span>
+										</a>
+										<a href="#" class="navbar-item">
+											<div class="navbar-item__title">
+												<img src="assets/images/wallet-icon.svg" alt="">
+												<span>Платежи</span>
+											</div>
+										</a>
+										<a href="#" class="navbar-item active">
+											<div class="navbar-item__title">
+												<img src="assets/images/message-icon.svg" alt="">
+												<span>Сообщения</span>
+											</div>
+											<span class="navbar__stat">3</span>
+										</a>
+										<a href="#" class="navbar-item">
+											<div class="navbar-item__title">
+												<img src="assets/images/star.svg" alt="">
+												<span>Избранное</span>
+											</div>
+											<span class="navbar__stat">80</span>
+										</a>
+										<a href="#" class="navbar-item">
+											<div class="navbar-item__title">
+												<img src="assets/images/person-icon.svg" alt="">
+												<span>Личные данные</span>
+											</div>
+										</a>
+										<a href="#" class="navbar-item">
+											<div class="navbar-item__title">
+												<img src="assets/images/sliders-vertical-icon.svg" alt="">
+												<span>Управление подписками</span>
+											</div>
+										</a>
+										<a href="#" class="navbar-item">
+											<div class="navbar-item__title">
+												<img src="assets/images/balloon-heart.svg" alt="">
+												<span>Мероприятия</span>
+											</div>
+											<span class="navbar__stat">80</span>
+										</a>
+										<a href="#" class="navbar-item navbar-item_red">
+											<div class="navbar-item__title">
+												<img src="assets/images/arrow-out.svg" alt="">
+												<span>Выход</span>
+											</div>
+										</a>
+									</div>
+								</div><!--/navbar-->
+							</div><!--/page-sidebar-->
+							<div class="page-content">
+								<section class="page-content__section">
+									<div class="page-content-header ">
+										<div class="page-content-header__row">
+											<h1 class="title">Сообщения</h1>
+										</div>
+										<a href="#" class="btn">Написать сообщение</a>
+									</div>
+									<div class="info">
+										<div class="info-box">
+											<div class="info-box__data">
+												<span>02.08.2022</span>
+												<span>15:00</span>
+											</div>
+											<div class="info-box__content">
+												<a href="#" class="info-box__name">Задолженность</a>
+												<div class="info-box__description">Получен ответ по заявке от 01 августа 2022 года</div>
+											</div>
+											<a href="#" class="info-box__close">
+												<svg>
+													<use xlink:href="#close-icon_2"></use>
+												</svg>
+											</a>
+										</div><!--/info-box-->
+										<div class="info-box">
+											<div class="info-box__data">
+												<span>02.08.2022</span>
+												<span>15:00</span>
+											</div>
+											<div class="info-box__content">
+												<a href="#" class="info-box__name">Мероприятие</a>
+												<div class="info-box__description">Заявка на участие в мероприятии “Семинар по недвижимости в Москве”... </div>
+											</div>
+											<a href="#" class="info-box__btn">Удалить заявку</a>
+											<a href="#" class="info-box__close">
+												<svg>
+													<use xlink:href="#close-icon_2"></use>
+												</svg>
+											</a>
+										</div><!--/info-box-->
+										<div class="info-box">
+											<div class="info-box__data">
+												<span>02.08.2022</span>
+												<span>15:00</span>
+											</div>
+											<div class="info-box__content">
+												<a href="#" class="info-box__name">Запись на прием</a>
+												<div class="info-box__description">Заключение договора/консультация по торгам</div>
+											</div>
+											<a href="#" class="info-box__btn">Удалить заявку</a>
+											<a href="#" class="info-box__close">
+												<svg>
+													<use xlink:href="#close-icon_2"></use>
+												</svg>
+											</a>
+										</div><!--/info-box-->
+									</div><!--/info-->
+								</section>
+								<div class="page-content__section">
+									<div class="info">
+										<div class="info-box">
+											<div class="info-box__data">
+												<span>02.08.2022</span>
+												<span>15:00</span>
+											</div>
+											<div class="info-box__content">
+												<a href="#" class="info-box__name">Договор на аренду коммерческого помещения № 345-123654 от 30.07.2022</a>
+											</div>
+											<a href="#" class="info-box__menu">
+												<svg>
+													<use xlink:href="#dots-vertical"></use>
+												</svg>
+											</a>
+											<div class="info-box__dropdown">
+												<a href="#" class="info-box__link">
+													<img src="assets/images/chat-icon.svg" alt="">
+													<span>Ответить</span>
+												</a>
+												<a href="#" class="info-box__link">
+													<img src="assets/images/trash-icon.svg" alt="">
+													<span>Удалить сообщение</span>
+												</a>
+											</div>
+										</div><!--/info-box-->
+										<div class="info-box">
+											<div class="info-box__data">
+												<span>02.08.2022</span>
+												<span>15:00</span>
+											</div>
+											<div class="info-box__content">
+												<a href="#" class="info-box__name">Договор на аренду коммерческого помещения № 345-123654 от 30.07.2022</a>
+											</div>
+											<a href="#" class="info-box__menu">
+												<svg>
+													<use xlink:href="#dots-vertical"></use>
+												</svg>
+											</a>
+											<div class="info-box__dropdown">
+												<a href="#" class="info-box__link">
+													<img src="assets/images/chat-icon.svg" alt="">
+													<span>Ответить</span>
+												</a>
+												<a href="#" class="info-box__link">
+													<img src="assets/images/trash-icon.svg" alt="">
+													<span>Удалить сообщение</span>
+												</a>
+											</div>
+										</div><!--/info-box-->
+										<div class="info-box">
+											<div class="info-box__data">
+												<span>02.08.2022</span>
+												<span>15:00</span>
+											</div>
+											<div class="info-box__content">
+												<a href="#" class="info-box__name">Договор на аренду коммерческого помещения № 345-123654 от 30.07.2022</a>
+											</div>
+											<a href="#" class="info-box__menu">
+												<svg>
+													<use xlink:href="#dots-vertical"></use>
+												</svg>
+											</a>
+											<div class="info-box__dropdown">
+												<a href="#" class="info-box__link">
+													<img src="assets/images/chat-icon.svg" alt="">
+													<span>Ответить</span>
+												</a>
+												<a href="#" class="info-box__link">
+													<img src="assets/images/trash-icon.svg" alt="">
+													<span>Удалить сообщение</span>
+												</a>
+											</div>
+										</div><!--/info-box-->
+										<div class="info-box">
+											<div class="info-box__data">
+												<span>02.08.2022</span>
+												<span>15:00</span>
+											</div>
+											<div class="info-box__content">
+												<a href="#" class="info-box__name">Договор на аренду коммерческого помещения № 345-123654 от 30.07.2022</a>
+											</div>
+											<a href="#" class="info-box__menu">
+												<svg>
+													<use xlink:href="#dots-vertical"></use>
+												</svg>
+											</a>
+											<div class="info-box__dropdown">
+												<a href="#" class="info-box__link">
+													<img src="assets/images/chat-icon.svg" alt="">
+													<span>Ответить</span>
+												</a>
+												<a href="#" class="info-box__link">
+													<img src="assets/images/trash-icon.svg" alt="">
+													<span>Удалить сообщение</span>
+												</a>
+											</div>
+										</div><!--/info-box-->
+										<div class="info-box">
+											<div class="info-box__data">
+												<span>02.08.2022</span>
+												<span>15:00</span>
+											</div>
+											<div class="info-box__content">
+												<a href="#" class="info-box__name">Договор на аренду коммерческого помещения № 345-123654 от 30.07.2022</a>
+											</div>
+											<a href="#" class="info-box__menu">
+												<svg>
+													<use xlink:href="#dots-vertical"></use>
+												</svg>
+											</a>
+											<div class="info-box__dropdown">
+												<a href="#" class="info-box__link">
+													<img src="assets/images/chat-icon.svg" alt="">
+													<span>Ответить</span>
+												</a>
+												<a href="#" class="info-box__link">
+													<img src="assets/images/trash-icon.svg" alt="">
+													<span>Удалить сообщение</span>
+												</a>
+											</div>
+										</div><!--/info-box-->
+									</div><!--/info-->
+									<div class="page-pagin">
+										<a href="#" class="page-pagin__link">1</a>
+										<a href="#" class="page-pagin__link active">2</a>
+										<a href="#" class="page-pagin__link">3</a>
+										<a href="#" class="page-pagin__link">4</a>
+										<a href="#" class="page-pagin__link">5</a>
+										<a href="#" class="page-pagin__link">...</a>
+										<a href="#" class="page-pagin__link">10</a>
+									</div>
+								</div>
+							</div><!--/page-content-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<a href="/" class="footer-title">
+					<img src="assets/images/logo.svg" alt="">
+					<span class="footer-title__info">
+						<span>Государственное унитарное предприятие</span>
+						<span>«Центр управления городским имуществом»</span>
+					</span>
+				</a>
+				<div class="footer-menu">
+					<div class="footer-menu__col">
+						<div class="footer-menu__block">
+							<div class="footer-menu__title">О предприятии</div>
+							<ul class="footer-menu__list">
+								<li>
+									<a href="#">О нас</a>
+								</li>
+								<li>
+									<a href="#">Документы</a>
+								</li>
+								<li>
+									<a href="#">Контакты</a>
+								</li>
+								<li>
+									<a href="#">Реквизиты</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer-menu__block">
+							<div class="footer-menu__title">Каталог недвижимости</div>
+							<ul class="footer-menu__list">
+								<li>
+									<a href="#">Жилая недвижимость</a>
+								</li>
+								<li>
+									<a href="#">Коммерческая недвижимость</a>
+								</li>
+								<li>
+									<a href="#">Машино-места</a>
+								</li>
+							</ul>
+						</div>
+					</div><!--/footer-menu__col-->
+					<div class="footer-menu__col">
+						<div class="footer-menu__block">
+							<div class="footer-menu__title">Деятельность</div>
+							<ul class="footer-menu__list">
+								<li>
+									<a href="#">Информация для юридических лиц и ИП</a>
+								</li>
+								<li>
+									<a href="#">Информация для граждан</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer-menu__block">
+							<div class="footer-menu__title">Услуги</div>
+							<ul class="footer-menu__list">
+								<li>
+									<a href="#">Перечень услуг</a>
+								</li>
+								<li>
+									<a href="#">Информация о готовности документов</a>
+								</li>
+								<li>
+									<a href="#">Архивные копии документов</a>
+								</li>
+								<li>
+									<a href="#">Консультации</a>
+								</li>
+								<li>
+									<a href="#">Аренда машино-мест</a>
+								</li>
+								<li>
+									<a href="#">Интерактивные карты паркингов</a>
+								</li>
+							</ul>
+						</div>
+					</div><!--/footer-menu__col-->
+					<div class="footer-menu__col">
+						<div class="footer-menu__block">
+							<div class="footer-menu__title">
+								<a href="#">КАЛЕНДАРЬ ТОРГОВ</a>
+							</div>
+							<div class="footer-menu__title">
+								<a href="#">МЕРОПРИЯТИЯ</a>
+							</div>
+							<div class="footer-menu__title">
+								<a href="#">НОВОСТИ</a>
+							</div>
+							<div class="footer-menu__title">
+								<a href="#">ВОПРОС-ОТВЕТ</a>
+							</div>
+						</div>
+					</div><!--/footer-menu__col-->
+					<div class="footer-menu__col">
+						<div class="footer-menu__contact">
+							<div class="footer-menu__block">
+								<div class="footer-menu__phone footer-menu__phone_red">
+									<a href="tel:+74951379758">+7 (495) 137-97-58</a>
+								</div>
+								<div class="footer-menu__phone">
+									<a href="tel:+74957859413">+7 (495) 785-94-13</a>
+								</div>
+								<div class="footer-menu__phone">
+									<a href="tel:+74957853652">+7 (495) 785-36-52</a>
+								</div>
+							</div>
+							<div class="footer-menu__block">
+								<div class="footer-menu__link">
+									<a href="mailto:info@cugimos.ru">info@cugimos.ru</a>
+								</div>
+								<div class="footer-menu__info">г. Москва, Стремянный переулок дом 38</div>
+							</div>
+						</div>
+						<div class="footer-social">
+							<a href="#" class="footer-social__icon" target="blank">
+								<img src="assets/images/vk-icon.svg" alt="">
+							</a>
+							<a href="#" class="footer-social__icon" target="blank">
+								<img src="assets/images/tg-icon.svg" alt="">
+							</a>
+						</div>
+					</div><!--/footer-menu__col-->
+				</div><!--/footer-menu-->
+				<div class="footer__copyright">
+					<div>ГУП г. Москвы «ЦЕНТР УПРАВЛЕНИЯ ГОРОДСКИМ ИМУЩЕСТВОМ» © 2022</div>
+					<div>При полном или частичном использовании материалов с официальных сайтов Правительства Москвы ссылка на источник обязательна.</div>
+				</div>
+			</div>
+		</footer><!--/footer-->
+	</div>
+
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
+	<script src="assets/js/slick.min.js"></script>
+	<script src="assets/js/jquery.formstyler.min.js"></script>
+	<script src="assets/js/script.js"></script>
+</body>
+</html>

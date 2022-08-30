@@ -24,6 +24,14 @@
 		margin: 0 auto 24px;
 		max-width: 840px;
 	}
+	&__name {
+		font-family: $ff;
+		font-size: 18px;
+		font-weight: 500;
+		color: $bl;
+		line-height: $lh;
+		margin-bottom: 25px;
+	}
 	&-headbox {
 		max-width: 840px;
 		margin: 0 auto;
@@ -59,6 +67,27 @@
 	&__inner {
 		max-width: 572px;
 		margin: 0 auto;
+	}
+	&__flexbox {
+		display: flex;
+		align-items: flex-end;
+		margin-left: -30px;
+		margin-bottom: -30px;
+		.form__item {
+			width: calc(33.33333% - 30px);
+			margin-left: 30px;
+			margin-bottom: 30px;
+			&:last-child {
+				margin-bottom: 30px;
+			}
+			&_big {
+				width: calc(66.66667% - 30px);
+			}
+		}
+		.btn {
+			min-height: 54px;
+			width: 100%;
+		}
 	}
 	&__items {
 		margin-bottom: 25px;
@@ -102,6 +131,11 @@
 		textarea {
 			resize: none;
 			height: 200px;
+		}
+		&_textarea-min {
+			textarea {
+				height: 100px;
+			}
 		}
 	}
 	&-select {
@@ -434,6 +468,24 @@
 
 
 /*===========Adaptive==========*/
+@media(max-width: 1200px) {
+	.form {
+		&__flexbox {
+			display: block;
+			margin-left: 0;
+			.form__item {
+				width: 100%;
+				margin-left: 0;
+				&_big {
+					width: 100%;
+				}
+			}
+			.btn {
+				width: auto;
+			}
+		}
+	}
+}
 @media(max-width: 765px) {
 	.form {
 		&-block {
@@ -500,6 +552,15 @@
 	.form {
 		&-block {
 			padding: 40px 0 100px;
+		}
+		&__name {
+			font-size: 16px;
+			margin-bottom: 15px;
+		}
+		&__flexbox {
+			.btn {
+				width: 100%;
+			}
 		}
 		&-checkbox {
 			i {
