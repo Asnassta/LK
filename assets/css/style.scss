@@ -282,6 +282,104 @@ body.hidden {
 }
 /*=========/data-list==========*/
 
+/*===========Favourites=========*/
+.favourites {
+	margin-top: 25px;
+	background-color: $wh;
+	border: 1px solid #E4EBF1;
+	&:first-child {
+		margin-top: 0;
+	}
+	&__inner {
+		display: flex;
+	}
+	&__photo {
+		display: block;
+		width: 32%;
+		img {
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+	&__info {
+		padding: 20px 30px 24px;
+		width: 68%;
+	}
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 5px;
+	}
+	&__btn {
+		display: inline-block;
+		svg {
+			width: 24px;
+			height: 24px;
+			fill: $red;
+		}
+	}
+	&__title {
+		font-family: $ff;
+		font-size: 18px;
+		font-weight: 500;
+		color: $bl;
+		line-height: $lh;
+		transition: all .2s linear;
+		margin-right: 30px;
+		&:last-child {
+			margin-right: 0;
+		}
+		&:hover {
+			color: $blue;
+		}
+	}
+	&__subtitle {
+		font-family: $ff;
+		font-size: 14px;
+		font-weight: 400;
+		color: $bl;
+		line-height: $lh;
+		margin-bottom: 30px;
+	}
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -40px;
+		margin-bottom: -20px;
+		>* {
+			margin-left: 40px;
+			margin-bottom: 20px;
+			width: calc(33.33333% - 40px);
+		}
+	}
+	&-data {
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		&__description {
+			font-family: $ff;
+			font-size: 14px;
+			font-weight: 400;
+			color: $gray;
+			line-height: $lh;
+			margin-right: 3px;
+		}
+		&__info {
+			font-family: $ff;
+			font-size: 14px;
+			font-weight: 500;
+			color: $bl;
+			line-height: $lh;
+			&_big {
+				font-size: 16px;
+				font-weight: 700;
+			}
+		}
+	}
+}
+/*===========/favourites=========*/
+
 /*=========Message-notify========*/
 .message-notify {
 	margin-left: 5px;
@@ -396,7 +494,7 @@ body.hidden {
 			display: inline-flex;
 			border-radius: 5px;
 			background-color: #E4EDF2;
-			padding: 7px 12px;
+			padding: 7px 11px;
 			font-family: $ff;
 			font-size: 12px;
 			font-weight: 400;
@@ -405,9 +503,22 @@ body.hidden {
 			text-align: center;
 			transition: all .2s linear;
 			margin-right: 23px;
+			min-width: 104.25px;
+			text-align: center;
+			justify-content: center;
+			&:last-child {
+				margin-right: 0;
+			}
 			&:hover {
 				background-color: $red;
 				color: $wh;
+			}
+			&_blue {
+				background-color: $dblue;
+				color: $wh;
+				&:hover {
+					background-color: $blue;
+				}
 			}
 		}
 		&__close {
@@ -1140,6 +1251,87 @@ body.hidden {
 }
 /*=========/chat=======*/
 
+/*============Schedule=========*/
+.schedule {
+	width: 100%;
+	max-width: 1820px;
+	padding: 0 15px;
+	margin: 30px auto;
+	&__inner {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -30px;
+		margin-bottom: -30px;
+	}
+	&__col {
+		width: calc(50% - 30px);
+		margin-left: 30px;
+		margin-bottom: 30px;
+		border: 1px solid #E4EBF1;
+		padding: 24px 30px 50px;
+		&_pt {
+			padding-top: 80px;
+		}
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		padding: 10px 0;
+		border-bottom: 1px solid $lgray;
+		transition: all .2s linear;
+		/*&:hover {
+			background-color: $lgray;
+		}*/
+		&:last-child {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+	}
+	&__title {
+		font-family: $ff;
+		font-size: 20px;
+		font-weight: 700;
+		color: $bl;
+		line-height: $lh;
+		margin-bottom: 30px;	
+	}
+	&__time {
+		margin-right: 30px;
+		padding: 15px;
+		min-width: 93px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid #3A82A7;
+		border-radius: 5px;
+		background-color: $wh;
+		font-family: $ff;
+		font-size: 16px;
+		font-weight: 500;
+		color: #3A82A7;
+		&.inactive {
+			background-color: #F2F9FB;
+			border: 1px solid #F2F9FB;
+			color: $gray;
+		}
+	}
+	&__name {
+		font-family: $ff;
+		font-size: 16px;
+		font-weight: 500;
+		color: $dblue;
+		line-height: $lh;
+	}
+	&__description {
+		font-family: $ff;
+		font-size: 14px;
+		font-weight: 400;
+		color: $bl;
+		line-height: $lh;
+	}
+}
+/*============/schedule=========*/
+
 
 /*==========Adaptive==============*/
 @media(max-width: 1330px) {
@@ -1173,6 +1365,22 @@ body.hidden {
 					margin-right: 15px;
 				}
 				span {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+	.favourites {
+		&__row {
+			margin-left: -20px;
+			>* {
+				margin-left: 20px;
+				width: calc(50% - 20px);
+			}
+		}
+		&-data {
+			&__info {
+				&_big {
 					font-size: 14px;
 				}
 			}
@@ -1266,6 +1474,21 @@ body.hidden {
 }
 
 @media(max-width: 860px) {
+	.favourites {
+		&__inner {
+			display: block;
+		}
+		&__photo {
+			width: 100%;
+			img {
+				max-height: 270px;
+			}
+		}
+		&__info {
+			width: 100%;
+			padding: 15px;
+		}
+	}
 	.info {
 		&-box {
 			padding: 20px;
@@ -1281,6 +1504,15 @@ body.hidden {
 			&__description {
 				font-size: 14px;
 			}
+		}
+	}
+	.schedule {
+		&__inner {
+			margin-left: 0;
+		}
+		&__col {
+			width: 100%;
+			margin-left: 0;
 		}
 	}
 }
@@ -1308,6 +1540,11 @@ body.hidden {
 }
 
 @media(max-width: 546px) {
+	.favourites {
+		&__title {
+			font-size: 16px;
+		}
+	}
 	.chat {
 		&__inner {
 			padding-right: 10px;
@@ -1334,6 +1571,11 @@ body.hidden {
 			span {
 				font-size: 14px;
 			}
+		}
+	}
+	.schedule {
+		&__col {
+			padding: 20px 15px 25px;
 		}
 	}
 	.data-box {
@@ -1437,6 +1679,12 @@ body.hidden {
 	.btn {
 		font-size: 13px;
 	}
+	.schedule {
+		&__title {
+			font-size: 18px;
+			margin-bottom: 15px;
+		}
+	}
 	.data-box {
 		&__title {
 			font-size: 14px;
@@ -1473,6 +1721,14 @@ body.hidden {
 }
 
 @media(max-width: 375px) {
+	.schedule {
+		&__time {
+			margin-right: 20px;
+		}
+		&__name {
+			font-size: 14px;
+		}
+	}
 	.data-box {
 		&__name {
 			span {

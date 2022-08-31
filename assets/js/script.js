@@ -135,6 +135,23 @@ $(document).ready(function() {
   /*=====/add-file=======*/
 
 
+  /*====Switch=====*/
+  $.each($('.switch'), function(index, val) {
+    if($(this).find('input').prop('checked')==true) {
+      $(this).addClass('active');
+    }
+  });
+  $(document).on('click', '.switch', function(event) {
+    if($(this).hasClass('active')) {
+      $(this).find('input').prop('checked', false);
+    }
+    else {
+      $(this).find('input').prop('checked', true);
+    }
+    $(this).toggleClass('active');
+  }); 
+  /*====/switch=====*/
+
     /*======Select-styler=============*/
   $(function() {
     $('select').styler();
