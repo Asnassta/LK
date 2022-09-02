@@ -1,8 +1,16 @@
 /*=========Page==========*/
 .page {
+	&-manager {
+		.page__wrapper {
+			padding-top: 65px;
+		}
+	}
 	&-header {
 		background-color: $dblue;
 		padding: 30px 0;
+		&_manager {
+			padding-bottom: 0;
+		}
 		&__inner {
 			display: flex;
 			justify-content: space-between;
@@ -50,6 +58,23 @@
 			line-height: $lh;
 			letter-spacing: 0.01em;
 		}
+		&__link {
+			display: inline-block;
+			font-family: $ff;
+			font-size: 18px;
+			font-weight: 400;
+			color: $wh;
+			line-height: $lh;
+			transition: all .2s linear;
+			text-decoration: underline;
+			margin-top: 3px;
+			&:first-child {
+				margin-top: 0;
+			}
+			&:hover {
+				text-decoration: none;
+			}
+		}
 		&__buttons {
 			display: flex;
 			margin-bottom: -10px;
@@ -59,6 +84,35 @@
 				&:last-child {
 					margin-right: 0;
 				}
+			}
+		}
+		&__search {
+			flex: 1 1 auto;
+			position: relative;
+			min-width: 22.5vw;
+			input {
+				width: 100%;
+				background-color: $wh;
+				border: 1px solid $b-gray;
+				border-radius: 6px 0px 0px 6px;
+				padding: 15px 50px 15px 16px;
+				font-family: $ff;
+				font-size: 16px;
+				font-weight: 500;
+				color: $bl;
+				line-height: $lh;
+				&::placeholder {
+					opacity: 1;
+					color: $gray;
+				}
+			}
+			button {
+				position: absolute;
+				top: 50%;
+				right: 24px;
+				z-index: 1;
+				transform: translateY(-50%);
+				background: transparent;
 			}
 		}
 	}/*===/page-header===*/
@@ -77,6 +131,57 @@
 			line-height: $lh;
 		}
 	}/*===/page-subheader===*/
+	&-nav {
+		margin-top: 30px;
+		display: flex;
+		&__item {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			background-color: $blue;
+			padding: 23px;
+			margin-right: 2px;
+			transition: all .2s linear;
+			flex: 1 1 auto;
+			min-width: calc(16.66666% - 2px);
+			&:hover {
+				background-color: $lblue;
+				svg {
+					fill: $dblue;
+				}
+				span {
+					color: $dblue;
+				}
+			}
+			&.active {
+				background-color: $lblue;
+				svg {
+					fill: $dblue;
+				}
+				span {
+					color: $dblue;
+				}
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+			svg {
+				width: 24px;
+				height: 24px;
+				fill: $wh;
+				transition: all .2s linear;
+				margin-right: 25px;
+			}
+			span {
+				font-family: $ff;
+				font-size: 16px;
+				font-weight: 500;
+				color: $wh;
+				line-height: $lh;
+			}
+		}
+	}/*===/page-nav===*/
 	&-back {
 		padding-right: 40px;
 		margin-right: 40px;
@@ -106,6 +211,10 @@
 	&__inner {
 		&_flex {
 			display: flex;
+			.page-content {
+				width: 75%;
+				padding-left: 28px;
+			}
 		}
 	}/*===/page__inner===*/
 	&-sidebar {
@@ -113,8 +222,6 @@
 		//min-width: 230px;
 	}/*===/page-sidebar===*/
 	&-content {
-		width: 75%;
-		padding-left: 28px;
 		&__box {
 			background-color: $wh;
 			border: 1px solid #E4EBF1;
@@ -257,6 +364,23 @@
 
 
 /*============Adaptive===========*/
+@media(max-height: 1400px) {
+	.page {
+		&-nav {
+			&__item {
+				padding: 20px 10px;
+				svg {
+					width: 20px;
+					height: 20px;
+					margin-right: 15px;
+				}
+				span {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}
 @media(max-width: 992px) {
 	.page {
 		&-header {
@@ -268,8 +392,22 @@
 				margin-bottom: 20px;
 			}
 		}
+		&-nav {
+			width: calc(100% + 30px);
+			margin: 30px -15px 0;
+			overflow: auto;
+			&__item {
+				min-width: 185px;
+			}
+		}
+		&__inner {
+			&_flex {
+				.page-content {
+					padding-left: 15px;
+				}
+			}
+		}
 		&-content {
-			padding-left: 15px;
 			&-header {
 				&__row {
 					display: block;
@@ -290,12 +428,21 @@
 }
 @media(max-width: 765px) {
 	.page {
+		&-manager {
+			.page__wrapper {
+				padding-top: 30px;
+			}
+		}
 		&__wrapper {
 			padding-bottom: 50px;
 		}
 		&__inner {
 			&_flex {
 				flex-direction: column-reverse;
+				.page-content {
+					width: 100%;
+					padding-left: 0;
+				}
 			}
 		}
 		&-sidebar {
@@ -304,7 +451,6 @@
 			margin-top: 20px;
 		}
 		&-content {
-			width: 100%;
 			padding-left: 0;
 			&-header {
 				flex-wrap: wrap;
@@ -329,8 +475,17 @@
 				margin-right: 15px;
 			}
 			&__buttons {
+				flex-wrap: wrap;
 				>* {
 					margin-right: 15px;
+				}
+			}
+			&__search {
+				width: 100%;
+				margin-right: 0;
+				input {
+					font-size: 14px;
+					border-radius: 6px;
 				}
 			}
 		}
