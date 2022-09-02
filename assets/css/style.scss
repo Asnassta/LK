@@ -1784,6 +1784,7 @@ body.hidden {
 					margin-bottom: 0;
 				}
 				&_border {
+					max-width: 100%;
 					border-bottom: 1px solid $lgray;
 					padding-right: 0;
 					padding-bottom: 10px;

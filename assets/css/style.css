@@ -3735,6 +3735,7 @@ body.hidden {
       .info-box__content:last-child {
         margin-bottom: 0; }
       .info-box__content_border {
+        max-width: 100%;
         border-bottom: 1px solid #E8E8E8;
         padding-right: 0;
         padding-bottom: 10px; }
