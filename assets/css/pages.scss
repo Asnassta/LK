@@ -209,6 +209,10 @@
 		padding: 40px 0 80px;
 	}
 	&__inner {
+		margin-top: 20px;
+		&:first-child {
+			margin-top: 0;
+		}
 		&_flex {
 			display: flex;
 			.page-content {
@@ -255,6 +259,12 @@
 				margin-right: 40px;
 				&:last-child {
 					margin-right: 0;
+				}
+			}
+			&_top {
+				align-items: flex-start;
+				.link {
+					margin-top: 5px;
 				}
 			}
 		}

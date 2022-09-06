@@ -1499,6 +1499,8 @@
 @media (max-width: 360px) {
   .form-headbox__link {
     padding: 12px;
+    font-size: 12px; }
+  .form__label {
     font-size: 12px; } }
 
 /*===========/adaptive==========*/
@@ -1734,13 +1736,17 @@
   .page__wrapper {
     background-color: #F5F9FC;
     padding: 40px 0 80px; }
-  .page__inner_flex {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-    .page__inner_flex .page-content {
-      width: 75%;
-      padding-left: 28px; }
+  .page__inner {
+    margin-top: 20px; }
+    .page__inner:first-child {
+      margin-top: 0; }
+    .page__inner_flex {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .page__inner_flex .page-content {
+        width: 75%;
+        padding-left: 28px; }
   .page-sidebar {
     width: 25%; }
   .page-content__box {
@@ -1781,6 +1787,12 @@
       margin-right: 40px; }
       .page-content-header .btn:last-child {
         margin-right: 0; }
+    .page-content-header_top {
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start; }
+      .page-content-header_top .link {
+        margin-top: 5px; }
   .page-content__title {
     font-family: "DIN Pro", sans-serif;
     font-size: 18px;
@@ -2432,6 +2444,22 @@ body.hidden {
     margin-bottom: 10px; }
     .data-list__buttons > *:last-child {
       margin-right: 0; }
+  .data-list__buttons_justify {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  .data-list__buttons-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 0; }
+    .data-list__buttons-row > * {
+      margin-right: 20px;
+      margin-bottom: 10px; }
+      .data-list__buttons-row > *:last-child {
+        margin-right: 0; }
 
 /*=========/data-list==========*/
 /*===========Favourites=========*/
@@ -3890,6 +3918,9 @@ body.hidden {
     -ms-flex-direction: column;
     flex-direction: column; }
     .data-list__buttons > * {
+      width: 100%;
+      margin-right: 0; }
+    .data-list__buttons .btn {
       width: 100%;
       margin-right: 0; }
   .info-box {

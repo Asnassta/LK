@@ -403,6 +403,21 @@ body.hidden {
 				margin-right: 0;
 			}
 		}
+		&_justify {
+			justify-content: space-between;
+		}
+		&-row {
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 0;
+			>* {
+				margin-right: 20px;
+				margin-bottom: 10px;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
 	}
 }
 /*=========/data-list==========*/
@@ -1976,6 +1991,10 @@ body.hidden {
 		&__buttons {
 			flex-direction: column;
 			>* {
+				width: 100%;
+				margin-right: 0;
+			}
+			.btn {
 				width: 100%;
 				margin-right: 0;
 			}
