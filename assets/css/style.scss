@@ -303,18 +303,58 @@ body.hidden {
 			}
 		}
 	}
+	&_payments {
+		.table__item {
+			&:first-child {
+				flex: 1 1 auto;
+				max-width: 106px;
+			}
+			&:nth-child(2) {
+				width: 32%;
+			}
+			&:nth-child(3) {
+				width: 28%;
+			}
+			&:nth-child(4) {
+				width: 24%;
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+	&_payments-base {
+		.table__item {
+			&:first-child {
+				flex: 1 1 auto;
+				max-width: 106px;
+			}
+			&:nth-child(2) {
+				width: 23%;
+			}
+			&:nth-child(3) {
+				width: 19%;
+			}
+			&:nth-child(4) {
+				width: 34%;
+			}
+			&:nth-child(5) {
+				width: 12%;
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
 	&__filters {
 		background-color: $wh;
 		border: 1px solid #E4EBF1;
-		padding: 25px 30px;
+		padding: 25px 30px 15px;
 		display: flex;
 		flex-wrap: wrap;
 		.table__item {
 			&:after {
 				display: none;
-			}
-			&:last-child {
-				margin-bottom: -10px;
 			}
 		}
 	}
@@ -382,6 +422,13 @@ body.hidden {
 		font-size: 16px;
 		font-weight: 500;
 		color: $blue;
+		line-height: $lh;
+	}
+	&__date {
+		font-family: $ff;
+		font-size: 16px;
+		font-weight: 500;
+		color: $bl;
 		line-height: $lh;
 	}
 	&__info {
@@ -848,6 +895,14 @@ body.hidden {
 				top: 50%;
 				z-index: 1;
 				transform: translateY(-50%);
+			}
+			&:first-child {
+				padding-left: 30px;
+				margin-left: 0;
+				flex: 0 1 auto;
+				&:before {
+					display: none;
+				}
 			}
 			&__input {
 				position: relative;
@@ -1692,6 +1747,9 @@ body.hidden {
 		&__name {
 			font-size: 14px;
 		}
+		&__date {
+			font-size: 14px;
+		}
 		&__info {
 			font-size: 14px;
 		}
@@ -1868,11 +1926,14 @@ body.hidden {
 			.table__title {
 				font-size: 14px;
 				display: block;
-				margin-right: 20px;
+				margin-right: 45px;
 			}
 		}
 		&__info, &__name {
 			text-align: right;
+		}
+		&__name {
+			display: block;
 		}
 		&__box {
 			justify-content: flex-end;
@@ -1889,8 +1950,10 @@ body.hidden {
 		&__item {
 			padding: 0 0 10px 0;
 			width: 100%!important;
+			max-width: 100%!important;
 			margin-bottom: 10px;
 			border-bottom: 1px solid $lgray;
+			//align-items: flex-start;
 			&:last-child {
 				margin-bottom: 0;
 				padding-bottom: 0;
@@ -1899,6 +1962,9 @@ body.hidden {
 			&:after {
 				display: none;
 			}
+		}
+		&__date {
+			text-align: right;
 		}
 		.info-box__menu {
 			margin-left: 0;
