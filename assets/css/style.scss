@@ -204,6 +204,11 @@ body.hidden {
 	}
 }
 
+.mt-50 {
+	margin-top: 50px;
+}
+
+
 /*=========Navbar=========*/
 .navbar {
 	&-item {
@@ -779,6 +784,12 @@ body.hidden {
 		background-color: $wh;
 		border: 1px solid #E4EBF1;
 		margin-bottom: 30px;
+		&_auto {
+			display: inline-flex;
+			.info-nav__item {
+				padding: 25px 40px;
+			}
+		}
 		&__item {
 			display: inline-flex;
 			align-items: center;
@@ -1705,6 +1716,16 @@ body.hidden {
 	.info {
 		&-nav {
 			flex-wrap: wrap;
+			&_auto {
+				.info-nav__item {
+					width: auto;
+					flex: 1 1 auto;
+					&:after {
+						width: 100%;
+						height: 3px;
+					}
+				}
+			}
 			&__item {
 				width: 100%;
 				flex: 1 1 100%;
@@ -1712,7 +1733,6 @@ body.hidden {
 				&:after {
 					width: 3px;
 					height: 100%;
-
 				}
 			}
 			&-data {
@@ -1827,6 +1847,9 @@ body.hidden {
 		span {
 			font-size: 12px;
 		}
+	}
+	.mt-50 {
+		margin-top: 20px;
 	}
 	.table {
 		&__filters {
@@ -2001,6 +2024,17 @@ body.hidden {
 		}
 	}
 	.info {
+		&-nav {
+			&_auto {
+				display: flex;
+				width: 100%;
+				.info-nav__item {
+					padding: 24px 10px;
+					text-align: center;
+					justify-content: center;
+				}
+			}
+		}
 		&-box {
 			flex-wrap: wrap;
 			position: relative;

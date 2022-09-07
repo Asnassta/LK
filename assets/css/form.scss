@@ -73,8 +73,8 @@
 		flex-wrap: wrap;
 		align-items: flex-end;
 		margin-left: -30px;
-		&:last-child {
-			margin-bottom: -30px;
+		>* {
+			margin-left: 30px;
 		}
 		.form__item {
 			width: calc(33.33333% - 30px);
@@ -85,6 +85,9 @@
 			}
 			&_big {
 				width: calc(66.66667% - 30px);
+			}
+			&_half {
+				width: calc(50% - 30px);
 			}
 		}
 		.btn {
@@ -409,6 +412,14 @@
 			}
 		}
 	}
+	&__centerbox {
+		flex: 1 1 auto;
+		display: flex;
+		align-items: center;
+		>*{
+			flex: 1 1 50%;
+		}
+	}
 }
 /*=============/form===========*/
 
@@ -614,6 +625,9 @@
 		&__flexbox {
 			display: block;
 			margin-left: 0;
+			>* {
+				margin-left: 0;
+			}
 			.form__item {
 				width: 100%;
 				margin-left: 0;
@@ -773,6 +787,9 @@
 		}
 		&__label {
 			font-size: 12px;
+		}
+		&__centerbox {
+			display: block;
 		}
 	}
 }
